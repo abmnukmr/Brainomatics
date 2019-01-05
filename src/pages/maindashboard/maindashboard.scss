@@ -1,0 +1,98 @@
+
+.cont{
+  width: 78%;
+  /* margin: 53px; */
+  margin-left: 11%;
+  margin-right: 11%;
+  margin-top: 4%;
+}
+
+.scroll-content {
+  background: #35a6aa;
+  height: 627px;
+}
+
+  .bgnds{
+    background: #35a6aa;
+    height: 300px;
+  }
+
+
+  .pading{
+    padding-top: 12px;
+    padding-left:12px;
+    padding-right: 12px;
+  }
+  .marginbutton{
+    margin-top: 8%
+  }
+
+  .btnbgo{
+    width: 100%;
+    height: 210px;
+    background: white
+  }
+
+@media (min-width: 1281px) {
+
+  .divwidthdash
+{
+  width: 30%;
+  margin-left: 35%;
+  margin-top:15%
+}
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .divwidthdash
+{
+  width: 30%;
+  margin-left: 35%;
+  margin-top:15%
+}
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  .divwidthdash
+{
+  width: 100%;
+  margin-top:15%
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .divwidthdash
+{
+  width: 100%;
+  margin-top:35%;
+}
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .divwidthdash
+{
+  width: 100%;
+  margin-top:35%;
+}
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .divwidthdash
+   {
+  width: 100%;
+  margin-top:35%
+  }
+
+}

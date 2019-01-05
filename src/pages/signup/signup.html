@@ -1,0 +1,105 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content #content padding class="cont">
+
+  <div class="bgsgnup" >
+    <ion-list  class="divwidth" [hidden]="registered">
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>USER ID</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>NAME</ion-label>
+        <ion-input type="text" ></ion-input>
+
+
+      </ion-item>
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>AGE</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>SCHOOL & CLASS</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>DATE OF BIRTH</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>WM POST DATE SCORE</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>IQ</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>AIRTHMETIC ABILITY SCORE</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>INTELLECTUAL SCORE</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>PASSWORD</ion-label>
+        <ion-input type={{text}}></ion-input>
+        <ion-icon *ngIf="pass_show" name="eye"  (click)="showpass()" color="primary" item-end></ion-icon>
+        <ion-icon  *ngIf="!pass_show" name="eye-off" (click)="hidepass()" color="primary"  item-end></ion-icon>
+
+      </ion-item>
+
+
+      <ion-item class="pading">
+        <ion-label color="primary" stacked>CONFIRM PASSWORD</ion-label>
+        <ion-input type={{text}}></ion-input>
+        <ion-icon *ngIf="pass_show" name="eye"  (click)="showpass()" color="primary" item-end></ion-icon>
+        <ion-icon  *ngIf="!pass_show" name="eye-off" (click)="hidepass()" color="primary"  item-end></ion-icon>
+
+      </ion-item>
+
+
+
+      <button ion-button block outline color="white" class="marginbutton" (click)="register()">
+        Register
+      </button>
+
+    </ion-list>
+
+    <ion-list class="divwidth"  style="margin-top: 200px" [hidden]="!registered">
+
+    <h4>Registered successfully</h4>
+    <button ion-button block color="white" (click)="gotologin()" >
+      go to Dashboard
+    </button>
+    </ion-list>
+
+  </div>
+
+</ion-content>
