@@ -1,0 +1,477 @@
+page-game3 {
+
+
+    .bg{
+      background: #35a6aa;
+    }
+
+    .scroll-content {
+      background: #35a6aa;
+      height: 150%;
+    }
+
+    .scroll-content::-webkit-scrollbar {
+      display:block;  // Safari and Chrome
+    }
+
+
+
+    .cont{
+      width: 78%;
+      margin-left: 11%;
+      margin-right: 11%;
+      margin-top: 4%;
+
+    }
+
+    .stat{
+      position: relative;
+     // background: #7a041f;
+     background-image: url('../assets/imgs/close_cupboard.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .blinkgame3{
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      //position: fixed;
+      background-image: url('../assets/imgs/open_cupboard.png');
+      background-size: cover;
+      -webkit-animation-name: examplegam3; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+      animation-name: examplegam3;
+      animation-duration: 4s;
+    }
+
+    @keyframes examplegam3 {
+      0%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      5% { // background: white ;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      10%   { //background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      15% {// background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      20% {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+
+      25% { //background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      30%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+
+      35% {
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      40%   {//background-color:red;
+
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+
+      45% { //background: white
+        background: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+
+      }
+      50%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      55% {// background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      60%   {///background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+      65% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      70%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      75% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      80%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      85% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+      90%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+      95% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+      100%   {
+        background-image: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+
+      }
+
+
+
+
+    }
+
+
+
+
+
+    .blink2game1{
+      width: 120px;
+      height: 120px;
+      margin: 10px;
+      position: fixed;
+      background-image: url('../assets/imgs/open_cupboard.png');
+      -webkit-animation-name: example2game3; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+      animation-name: example2game3;
+      animation-duration: 4s;
+    }
+
+    @keyframes example2game3 {
+      0%   {//background-color:red;
+
+
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      5% { // background: white ;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      10%   { //background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      15% {// background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      20%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      25% { //background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      30%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+
+      35% {
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      40%   {//background-color:red;
+
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+
+      45% { //background: white
+        background: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+
+      }
+      50%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      55% {// background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      60%   {///background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+      65% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      70%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      75% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      80%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      85% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+      90%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+      95% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+      100%   {
+        background-image: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+
+      }
+
+
+    }
+
+    @-webkit-keyframes example2game3 {
+
+      0%   {//background-color:red;
+
+
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      5% { // background: white ;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      10%   { //background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      15% {// background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      20%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+      25% { //background: white;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      30%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+
+
+      35% {
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+      }
+      40%   {//background-color:red;
+
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+
+
+      }
+
+
+      45% { //background: white
+        background: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+      }
+      50%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      55% {// background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      60%   {///background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      65% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      70%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      75% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      80%   {//background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      85% {
+        //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      90%   {
+        //background-color:red;
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      95% { //background: white
+        background-image: url('../assets/imgs/open_cupboard.png');
+        background-size: cover;
+      }
+      100%   {
+        background-image: url('../assets/imgs/open_cupboard.png') ;
+        background-size: cover;
+      }
+    }
+
+    .result{
+      background-image: url('../assets/imgs/resultring.png') ;
+      background-size: cover;
+    }
+
+    .glow {
+      color: #fdf6fb;
+      text-align: center;
+      -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+      -moz-animation: glow 0.8s ease-in-out infinite alternate;
+      animation: glow 0.8s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      10% {
+        text-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        transform: translateY(0);
+      }
+      50% {
+        text-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        transform: translateY(-10px);
+      }
+
+      100% {
+        text-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6;
+        transform: translateY(0);
+      }
+    }
+
+
+
+
+    .bonus{
+      > div {
+        background: #41dbb4;
+      }
+    }
+    .wrong{
+      > div {
+
+        background: red;
+      }
+    }
+    .yellow{
+      > div {
+
+        background: yellow;
+      }
+    }
+  }
+
+
+

@@ -1,0 +1,403 @@
+
+
+<ion-content padding class="cont">
+
+    <div class="bg" >
+    
+      <div style="text-align: center;color: #fcd011">
+        <h1 style="text-align: center;color: #fcd011">{{gamename}}</h1>
+        <button ion-button clear icon-only (click)="gotohome()">
+          <ion-icon name="home" color="light"></ion-icon>
+        </button>
+      </div>
+    
+      <div style="width: 100%;">
+       <ion-row>
+    
+          <ion-col col-3>
+            <h6 style="text-align: center;color: #fcd011">Countdown Time: {{minShow}}:{{secShow}}:{{miliseconddd}}</h6>
+          </ion-col>
+    
+         <ion-col col-3>
+           <h6 style="text-align: center;color: #fcd011">Game1/Level{{level}}/Attempt:{{attemptcount}}/{{attempt}}</h6>
+         </ion-col>
+    
+         <ion-col col-3>
+           <h6 style="text-align: center;color: #fcd011">Game: {{gamename}}</h6>
+         </ion-col>
+    
+         <ion-col col-3>
+           <h6  style="text-align: center;color: #fcd011">Score:{{score}}</h6>
+         </ion-col>
+    
+      </ion-row>
+    
+      </div>
+    
+    
+    
+    
+      <div style="width: 100%;margin-top:0%;text-align: center">
+        <ion-row>
+          <ion-col col-2>
+    
+            <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index" [disabled]="game.name=='Game 09'?false:true" (click)="gotogame_2()">{{game.name}}
+              <ion-icon name="{{game.icon}}" [hidden]="i==7?true:false"></ion-icon>
+            </button><br>
+    
+    
+          </ion-col>
+    
+          <ion-col col-8>
+    
+            <div [hidden]="game1"  style="margin-left:-35%">
+    
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+              <ion-col col-2 *ngIf="block1" #block1  style="flex:0 0 18%;padding-top: 2%">
+    
+                  <img *ngIf="!first1" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(135deg);">
+      
+    
+                <div (click)="checkresult(1)"  *ngIf="first1"  class="stat11"  style="height: 50px;width: 50px;margin:0px" #first>
+                 
+                </div>
+              </ion-col>
+    
+              <ion-col col-2 *ngIf="block2" #block2  style="flex:0 0 18%;padding-top: 2%">
+                  <img *ngIf="!first2" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(180deg);">
+      
+    
+                <div  (click)="checkresult(2)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="first2" #second>
+                 
+                </div>
+              </ion-col>
+    
+              <ion-col col-2 *ngIf="block3" #block3 style="flex:0 0 18%;padding-top: 2%" >
+                  <img *ngIf="!first3" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(180deg);">
+      
+    
+                <div  (click)="checkresult(3)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="first3" #three>
+                 
+                </div>
+              </ion-col>
+
+              <ion-col col-2 *ngIf="block4" #block4  style="flex:0 0 18%;"  >
+                  <img *ngIf="!first4" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(180deg);">
+      
+      
+                  <div  class="stat" (click)="checkresult(4)"  style="height: 50px;width: 50px;margin-top:6%" *ngIf="first4" #four>
+                    
+                  </div>
+              </ion-col>
+      
+              <ion-col col-2 *ngIf="block5" #block5 style="flex:0 0 18%;"  >
+    
+                  <img *ngIf="!first5" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(180deg);">
+      
+    
+                <div  (click)="checkresult(5)"   class="stat" style="height: 50px;width: 50px;margin-top:6%" *ngIf="first5" #five>
+                 
+                </div>
+    
+              </ion-col>
+              
+              <ion-col col-2 *ngIf="block6" #block6 style="flex:0 0 18%;" >
+    
+                  <img *ngIf="!first6" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(-135deg);">
+      
+    
+                <div  class="stat22" (click)="checkresult(6)"  style="height: 50px;width: 50px;margin-top:6%" *ngIf="first6" #six>
+                  
+                </div>
+    
+              </ion-col>
+    
+            </ion-row>
+    
+              <div style="text-align: center;margin-top: 20%" [hidden]="start" >
+                <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 53%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
+              </div>
+    
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+                  <ion-col col-2 *ngIf="block7" #block7  style="flex:0 0 18%;padding-top: 2%">
+        
+                      <img *ngIf="!first7" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(90deg);">
+      
+        
+                    <div (click)="checkresult(7)"  *ngIf="first7"  class="stat1"  style="height: 50px;width: 50px;margin:0px" #first>
+                     
+                    </div>
+                  </ion-col>
+        
+                  <ion-col col-2   style="flex:0 0 18%;padding-top: 2%">
+        
+                  </ion-col>
+        
+                  <ion-col col-2   style="flex:0 0 18%;padding-top: 2%" >
+        
+                  </ion-col>
+    
+                  <ion-col col-2  style="flex:0 0 18%;"  >
+                  </ion-col>
+          
+                  <ion-col col-2  style="flex:0 0 18%;"  >
+        
+                  </ion-col>
+                  
+                  <ion-col col-2 *ngIf="block8" #block8 style="flex:0 0 18%;" >
+        
+                      <img *ngIf="!first8" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(-90deg);">
+      
+        
+                    <div  class="stat2" (click)="checkresult(8)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first8" #six>
+                      
+                    </div>
+        
+                  </ion-col>
+        
+            </ion-row>  
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+                <ion-col col-2 *ngIf="block_9" #block9  style="flex:0 0 18%;padding-top: 2%">
+      
+                    <img *ngIf="!first9" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(90deg);">
+      
+      
+                  <div (click)="checkresult(9)"  *ngIf="first9"  class="stat1"  style="height: 50px;width: 50px;margin:0px" #first>
+                  
+                  </div>
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%">
+      
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%" >
+      
+                </ion-col>
+  
+                <ion-col col-2  style="flex:0 0 18%;"  >
+                </ion-col>
+        
+                <ion-col col-2  style="flex:0 0 18%;"  >
+      
+                </ion-col>
+                
+                <ion-col col-2 *ngIf="block10" #block10 style="flex:0 0 18%;" >
+      
+                    <img *ngIf="!first10" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(-90deg);">
+      
+      
+                  <div  class="stat2" (click)="checkresult(10)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first10" #six>
+                    
+                  </div>
+      
+                </ion-col>
+      
+            </ion-row> 
+            
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+                <ion-col col-2 *ngIf="block11" #block11  style="flex:0 0 18%;padding-top: 2%">
+      
+                    <img *ngIf="!first11" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(90deg);">
+      
+      
+                  <div (click)="checkresult(11)"  *ngIf="first11"  class="stat1"  style="height: 50px;width: 50px;margin:0px" #first>
+                   
+                    
+                  </div>
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%">
+      
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%" >
+      
+                </ion-col>
+  
+                <ion-col col-2  style="flex:0 0 18%;"  >
+                </ion-col>
+        
+                <ion-col col-2  style="flex:0 0 18%;"  >
+      
+                </ion-col>
+                
+                <ion-col col-2 *ngIf="block12" #block12 style="flex:0 0 18%;" >
+      
+                    <img *ngIf="!first12" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(-90deg);">
+      
+      
+                  <div  class="stat2" (click)="checkresult(12)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first12" #six>
+                    
+                    
+                  </div>
+      
+                </ion-col>
+      
+            </ion-row>
+
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+                <ion-col col-2 *ngIf="block13" #block13  style="flex:0 0 18%;padding-top: 2%">
+      
+                    <img *ngIf="!first13" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(90deg);">
+    
+      
+                  <div (click)="checkresult(13)"  *ngIf="first13"  class="stat1"  style="height: 50px;width: 50px;margin:0px" #first>
+                   
+                    
+                  </div>
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%">
+      
+                </ion-col>
+      
+                <ion-col col-2   style="flex:0 0 18%;padding-top: 2%" >
+      
+                </ion-col>
+  
+                <ion-col col-2  style="flex:0 0 18%;"  >
+                </ion-col>
+        
+                <ion-col col-2  style="flex:0 0 18%;"  >
+      
+                </ion-col>
+                
+                <ion-col col-2 *ngIf="block14" #block14 style="flex:0 0 18%;" >
+      
+<!--       
+                  <div  class="bblinkgame13 glow" style="background-image: url('../assets/imgs/on.png');" *ngIf="first14">
+      
+                  
+                  </div> -->
+                  <img *ngIf="!first14" src="../assets/imgs/on.png" width="auto" height="50px" style="margin-left: -32%;transform: rotate(-90deg);">
+      
+                  <div  class="stat2" (click)="checkresult(14)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first14" #six>
+                   
+                    
+                  </div>
+      
+                </ion-col>
+      
+            </ion-row>
+
+    
+              <div style="margin-left:12%" *ngIf="block9">
+                <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 13%" ion-button (click)="startgame()">I'm ready</button>
+              </div>
+  
+              <div style="margin-left:12%" *ngIf="block99">
+                <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 13%" ion-button (click)="startgame3()">I'm ready</button>
+              </div>
+  
+  
+              <div style="margin-left: 25%">
+                <button ion-button round color="secondary"  *ngIf="repeatshow">Please select bulb in same order. </button>
+              </div>
+    
+    
+    
+            <ion-row style="text-align: center;margin-left:10%;margin-top:0%" [hidden]="!gamestart1">
+    
+              <ion-col col-4 >
+    
+    
+              </ion-col>
+    
+              <ion-col col-4 style="text-align: center" >
+    
+    
+                <div style="width: 72%;margin-left: 40%">
+                    <button ion-button round color="white" (click)="startgame()" *ngIf="repeatshow">Repeat</button>
+                 
+                </div>
+    
+              </ion-col>
+    
+    
+              <ion-col col-4 >
+    
+              </ion-col>
+    
+            </ion-row>
+    
+            </div>
+    
+    
+    
+          </ion-col>
+    
+    
+          <ion-col col-2>
+    
+    
+            <button ion-button icon-right [color]="level<1?'white':'primary'" [disabled]="level<1?true:false">LEVEL 01
+              <ion-icon name="lock" [hidden]="level<1?false:true" [color]="level==1?'white':'primary'"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<2?'white':'primary'"  [disabled]="level<2?true:false">LEVEL 02
+              <ion-icon name="lock" [hidden]="level<2?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<3?'white':'primary'" [disabled]="level<3?true:false">LEVEL 03
+              <ion-icon name="lock" [hidden]="level<3?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<4?'white':'primary'" [disabled]="level<4?true:false">LEVEL 04
+              <ion-icon name="lock" [hidden]="level<4?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right   [color]="level<5?'white':'primary'" [disabled]="level<5?true:false">LEVEL 05
+              <ion-icon name="lock" [hidden]="level<5?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level< 6?'white':'primary'" [disabled]="level<6?true:false">LEVEL 06
+              <ion-icon name="lock" [hidden]="level<6?false:true"></ion-icon>
+            </button> <br>
+    
+    
+    
+    
+          </ion-col>
+    
+    
+        </ion-row>
+    
+      </div>
+    
+      <ion-footer >
+    
+        <ion-row>
+    
+          <ion-col col-3>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+    
+              <h1 style="text-align: center;color: white">Game1/Level{{level}}</h1>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+    
+            <h1 style="text-align: center;color: white"> {{gamename}}</h1>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+          </ion-col>
+        </ion-row>
+    
+      </ion-footer>
+    
+    </div >
+    
+    </ion-content>
+    
+    

@@ -1,0 +1,363 @@
+
+
+<ion-content padding class="cont">
+
+    <div class="bg" >
+    
+      <div style="text-align: center;color: #fcd011">
+        <h1 style="text-align: center;color: #fcd011">{{gamename}}</h1>
+        <button ion-button clear icon-only (click)="gotohome()">
+          <ion-icon name="home" color="light"></ion-icon>
+        </button>
+      </div>
+    
+      <div style="width: 100%;">
+       <ion-row>
+    
+          <ion-col col-3>
+            <h6 style="text-align: center;color: #fcd011">Countdown Time: {{minShow}}:{{secShow}}:{{miliseconddd}}</h6>
+          </ion-col>
+    
+         <ion-col col-3>
+           <h6 style="text-align: center;color: #fcd011">Game1/Level{{level}}/Attempt:{{attemptcount}}/{{attempt}}</h6>
+         </ion-col>
+    
+         <ion-col col-3>
+           <h6 style="text-align: center;color: #fcd011">Game: {{gamename}}</h6>
+         </ion-col>
+    
+         <ion-col col-3>
+           <h6  style="text-align: center;color: #fcd011">Score:{{score}}</h6>
+         </ion-col>
+    
+      </ion-row>
+    
+      </div>
+    
+    
+    
+    
+      <div style="width: 100%;margin-top:0%;text-align: center">
+        <ion-row>
+          <ion-col col-2>
+    
+            <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index" [disabled]="game.name=='Game 09'?false:true" (click)="gotogame_2()">{{game.name}}
+              <ion-icon name="{{game.icon}}" [hidden]="i==7?true:false"></ion-icon>
+            </button><br>
+    
+    
+          </ion-col>
+    
+          <ion-col col-8>
+    
+             <img src="../assets/imgs/window1.png" [hidden]="!start" style="margin-left: -15.15%;margin-top: -4.3%;
+             width: 30%;
+             height: 64%;
+             position: fixed;" >
+            <div [hidden]="game1" >
+    
+            <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+    
+              <ion-col col-3 *ngIf="block1" #block1  style="background:#766D5F;flex:0 0 18%;padding-top: 2%">
+    
+    
+                <div  class="blinkgame1" *ngIf="!first1" #first1>
+    
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                    
+                </div>
+    
+                <div (click)="checkresult(1)"  *ngIf="first1"  class="stat"  style="height: 80px;width: 80px;margin:0px" #first>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">1</h1>
+    
+                </div>
+              </ion-col>
+    
+              <ion-col col-3 *ngIf="block2" #block2  style="background:#766D5F;flex:0 0 18%;padding-top: 2%">
+    
+                <div  class="blinkgame1" *ngIf="!first2" #second2>
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+    
+                </div>
+    
+                <div  (click)="checkresult(2)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first2" #second>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">2</h1>
+    
+                </div>
+              </ion-col>
+    
+    
+              <ion-col col-3 *ngIf="block3" #block3 style="background:#766D5F;flex:0 0 18%;padding-top: 2%" >
+    
+                <div  class="blinkgame1" *ngIf="!first3" #three3>
+    
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                    
+                </div>
+    
+                <div  (click)="checkresult(3)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first3" #three>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">3</h1>
+    
+                </div>
+              </ion-col>
+    
+            </ion-row>
+    
+              <div style="text-align: center;margin-top: 18%" [hidden]="start" >
+                <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
+              </div>
+    
+    
+            <ion-row style="text-align: center;margin-left:28%;margin-top:0%" [hidden]="!start">
+  
+  
+              <ion-col col-3 *ngIf="block4" #block4  style="background:#766D5F;flex:0 0 18%;"  >
+                <div  class="blinkgame1" *ngIf="!first4" #four4>
+    
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                    
+                </div>
+    
+                <div  class="stat" (click)="checkresult(4)"  style="height: 80px;width: 80px;margin:0px" *ngIf="first4" #four>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">4</h1>
+    
+                </div>
+              </ion-col>
+    
+              <ion-col col-3 *ngIf="block5" #block5 style="background:#766D5F;flex:0 0 18%;"  >
+    
+    
+                <div  class="blinkgame1" *ngIf="!first5" #five5>
+    
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                    
+                </div>
+    
+                <div  (click)="checkresult(5)"   class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first5" #five>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">5</h1>
+    
+                </div>
+    
+              </ion-col>
+    
+    
+    
+              <ion-col col-3 *ngIf="block6" #block6 style="background:#766D5F;flex:0 0 18%;" >
+    
+    
+                <div  class="blinkgame1" *ngIf="!first6" #six6>
+    
+                  <h1 class="glow" style="font-size:60px;margin-top:0%;padding-top: 20px">{{Strnumber}}</h1>
+    
+                </div>
+    
+                <div  class="stat" (click)="checkresult(6)"  style="height: 80px;width: 80px;margin:0px" *ngIf="first6" #six>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">6</h1>
+    
+                </div>
+    
+              </ion-col>
+    
+    
+            </ion-row>
+  
+            <ion-row style="text-align: center;margin-left:28%;margin-top: 0%" [hidden]="!start">
+  
+              <ion-col col-3 *ngIf="block7" #block7  style="background:#766D5F;flex:0 0 18%;">
+    
+                <div  class="blinkgame1" *ngIf="!first7" #seven7>
+                    <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                </div>
+                
+                <div (click)="checkresult(7)"  class="stat"  style="height: 80px;width: 80px;margin:0px" *ngIf="first7" #seven>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">7</h1>
+    
+                </div>
+              </ion-col>
+    
+              <ion-col col-3 *ngIf="block8" #block8  style="background:#766D5F;flex:0 0 18%;">
+    
+                <div  class="blinkgame1" *ngIf="!eightt" #eight8>
+                    <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                </div>
+    
+                <div  (click)="checkresult(8)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="eightt" #eight>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">8</h1>
+    
+                </div>
+    
+    
+              </ion-col>
+  
+              <ion-col col-3 *ngIf="block_9" #block_9 style="background:#766D5F;flex:0 0 18%;" >
+    
+                <div  class="blinkgame1" *ngIf="!nine" #nine8>
+                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                </div>
+    
+                <div  (click)="checkresult(9)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="nine" #nine9>
+                  <h1  style="font-size:60px;padding-top:2%;color: white;">9</h1>
+    
+                </div>
+    
+    
+              </ion-col>
+              
+    
+            </ion-row>
+    
+  
+            <ion-row style="text-align: center;margin-left:28%;margin-top: 0%" [hidden]="!start">
+                <ion-col col-3 *ngIf="block11" #block0 style="background:#766D5F;flex:0 0 0%;" >
+    
+                    
+        
+                    <div  (click)="checkresult(9)"  class="stat" style="height: 80px;width: 80px;margin:0px"  #eight>
+                      <h1  style="font-size:60px;padding-top:2%;color: white;">*</h1>
+        
+                    </div>
+        
+        
+                </ion-col>
+    
+                <ion-col col-3 *ngIf="block0"  style="background:#766D5F;flex:0 0 0%;" >
+      
+                  <div  class="blinkgame1" *ngIf="!zero">
+                      <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                  </div>
+      
+                  <div  (click)="check(0)" class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="zero" #eight>
+                    <h1  style="font-size:60px;padding-top:2%;color: white;">0</h1>
+      
+                  </div>
+      
+      
+                </ion-col>
+                <ion-col col-3 *ngIf="block12"  style="background:#766D5F;flex:0 0 0%;" >
+    
+                  
+        
+                    <div  (click)="check(0)" class="stat" style="height: 80px;width: 80px;margin:0px" #eight>
+                      <h1  style="font-size:60px;padding-top:2%;color: white;">#</h1>
+                    </div>
+        
+                </ion-col>
+  
+              
+    
+            </ion-row>
+    
+              <div style="text-align: center" *ngIf="block9">
+                <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 0%" ion-button (click)="startgame()">I'm ready</button>
+              </div>
+  
+              <div style="text-align: center" *ngIf="block99">
+                <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 0%" ion-button (click)="startgame3()">I'm ready</button>
+              </div>
+  
+  
+              <div style="text-align: center">
+                <button ion-button round color="secondary"  *ngIf="repeatshow">Please select cupboard in reverse order. </button>
+              </div>
+    
+    
+    
+            <ion-row style="text-align: center;margin-left:10%;margin-top:0%" [hidden]="!gamestart1">
+    
+              <ion-col col-4 >
+    
+    
+              </ion-col>
+    
+              <ion-col col-4 style="text-align: center" >
+    
+    
+                <div style="width: 72%;text-align: center">
+                    <button ion-button round color="white" (click)="startgame()" *ngIf="repeatshow">Repeat</button>
+                 
+                </div>
+    
+              </ion-col>
+    
+    
+              <ion-col col-4 >
+    
+              </ion-col>
+    
+            </ion-row>
+    
+            </div>
+    
+    
+    
+          </ion-col>
+    
+    
+          <ion-col col-2>
+    
+    
+            <button ion-button icon-right [color]="level<1?'white':'primary'" [disabled]="level<1?true:false">LEVEL 01
+              <ion-icon name="lock" [hidden]="level<1?false:true" [color]="level==1?'white':'primary'"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<2?'white':'primary'"  [disabled]="level<2?true:false">LEVEL 02
+              <ion-icon name="lock" [hidden]="level<2?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<3?'white':'primary'" [disabled]="level<3?true:false">LEVEL 03
+              <ion-icon name="lock" [hidden]="level<3?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level<4?'white':'primary'" [disabled]="level<4?true:false">LEVEL 04
+              <ion-icon name="lock" [hidden]="level<4?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right   [color]="level<5?'white':'primary'" [disabled]="level<5?true:false">LEVEL 05
+              <ion-icon name="lock" [hidden]="level<5?false:true"></ion-icon>
+            </button> <br>
+    
+            <button ion-button icon-right  [color]="level< 6?'white':'primary'" [disabled]="level<6?true:false">LEVEL 06
+              <ion-icon name="lock" [hidden]="level<6?false:true"></ion-icon>
+            </button> <br>
+    
+    
+    
+    
+          </ion-col>
+    
+    
+        </ion-row>
+    
+      </div>
+    
+      <ion-footer >
+    
+        <ion-row>
+    
+          <ion-col col-3>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+    
+              <h1 style="text-align: center;color: white">Game1/Level{{level}}</h1>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+    
+            <h1 style="text-align: center;color: white"> {{gamename}}</h1>
+    
+          </ion-col>
+    
+          <ion-col col-3>
+          </ion-col>
+        </ion-row>
+    
+      </ion-footer>
+    
+    </div >
+    
+    </ion-content>
+    
+    

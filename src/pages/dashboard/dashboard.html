@@ -2,17 +2,6 @@
 
 <ion-content padding class="cont">
 
-
-
-
-
-
-
-
-
-
-
-
 <div class="bg" >
 
   <div style="text-align: center;color: #fcd011">
@@ -52,8 +41,8 @@
     <ion-row>
       <ion-col col-2>
 
-        <button ion-button icon-right color={{game.color}} *ngFor="let game of Games" [disabled]="game.name=='Game 02'?false:true" (click)="gotogame_2()">{{game.name}}
-          <ion-icon name="{{game.icon}}"></ion-icon>
+        <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index" [disabled]="game.name=='Game 02'?false:true" (click)="gotogame_2()">{{game.name}}
+          <ion-icon name="{{game.icon}}" [hidden]="i==0?true:false"></ion-icon>
         </button><br>
 
 
@@ -69,9 +58,9 @@
           <ion-col col-3 *ngIf="block1" #block1 >
 
 
-            <div  class="blink" *ngIf="!first1" #first1>
+            <div  class="blinkgame1" *ngIf="!first1" #first1>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -82,8 +71,8 @@
 
           <ion-col col-3 *ngIf="block2" #block2 >
 
-            <div  class="blink" *ngIf="!first2" #second2>
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+            <div  class="blinkgame1" *ngIf="!first2" #second2>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -95,9 +84,9 @@
 
           <ion-col col-3 *ngIf="block3" #block3 >
 
-            <div  class="blink" *ngIf="!first3" #three3>
+            <div  class="blinkgame1" *ngIf="!first3" #three3>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -107,9 +96,9 @@
           </ion-col>
 
           <ion-col col-3 *ngIf="block4" #block4 >
-            <div  class="blink" *ngIf="!first4" #four4>
+            <div  class="blinkgame1" *ngIf="!first4" #four4>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -124,14 +113,14 @@
           </div>
 
 
-          <ion-row style="text-align: center;margin-left:8%;margin-top: 2%" [hidden]="!start">
+          <ion-row style="text-align: center;margin-left:8%;margin-top: -5%" [hidden]="!start">
 
           <ion-col col-3 *ngIf="block5" #block5 >
 
 
-            <div  class="blink" *ngIf="!first5" #five5>
+            <div  class="blinkgame1" *ngIf="!first5" #five5>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -141,12 +130,13 @@
           </ion-col>
 
 
+
           <ion-col col-3 *ngIf="block6" #block6 >
 
 
-            <div  class="blink" *ngIf="!first6" #six6>
+            <div  class="blinkgame1" *ngIf="!first6" #six6>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -159,9 +149,9 @@
           <ion-col col-3 *ngIf="block7" #block7 >
 
 
-            <div  class="blink" *ngIf="!first7" #seven7>
+            <div  class="blinkgame1" *ngIf="!first7" #seven7>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
               <div (click)="check(7)" class="stat"  style="height: 100px;width: 100px;margin:10px" *ngIf="first7" #seven>
@@ -170,9 +160,9 @@
 
           <ion-col col-3 *ngIf="block8" #block8 >
 
-            <div  class="blink" *ngIf="!eightt" #eight8>
+            <div  class="blinkgame1" *ngIf="!eightt" #eight8>
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 5%;padding-top: 20px">{{Strnumber}}</h1>
 
             </div>
 
@@ -212,11 +202,11 @@
 
             <div style="width: 72%;text-align: center">
 
-              <button ion-button color="white" (click)="startgame()" [hidden]="result_numberr==''?true:false">Repeat</button>
+              <button ion-button round color="white" (click)="startgame()" [hidden]="result_numberr==''?true:false">Repeat</button>
             </div>
             <div  class="result"  style="height: 120px;width: 150px;margin-top:-10%">
 
-              <h1 class="banim glow" style="font-size:60px;margin-top: 10%;padding-top: 40px">{{result_numberr}}</h1>
+              <h1 class="glow" style="font-size:60px;margin-top: 10%;padding-top: 40px">{{result_numberr}}</h1>
             </div>
 
           </ion-col>

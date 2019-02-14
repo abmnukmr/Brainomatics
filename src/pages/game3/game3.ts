@@ -1,26 +1,20 @@
 import {Component, ElementRef, NgZone, ViewChild} from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Game1Page} from "../game1/game1";
-import {NativeAudio} from "@ionic-native/native-audio";
+
 import {Ng2CsvService} from "ng2csv";
 import {MaindashboardPage} from "../maindashboard/maindashboard";
 import { Storage } from '@ionic/storage';
-import {Game3Page} from "../game3/game3";
+import {Game4Page} from "../game4/game4";
+import {Game2Page} from "../game2/game2";
 
-
-/**
- * Generated class for the Game2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
-  selector: 'page-game2',
-  templateUrl: 'game2.html',
+  selector: 'page-game3',
+  templateUrl: 'game3.html',
 })
-export class Game2Page {
+export class Game3Page {
   res_result:any;
   res_checklist:any;
   counter:number=0
@@ -73,7 +67,7 @@ export class Game2Page {
   index_number:number;
   result_number:number;
   result_numberr:string=""
-  gamename:any="Apple Colour Filling";
+  gamename:any="Knock the Cupboard";
   game1:boolean=false;
   blockarray=[]
   numarray=[]
@@ -87,9 +81,9 @@ export class Game2Page {
   repeatshow:boolean=false;
   secarray:any=['00','59','58','57','56','55', '54', '53','52','51','50','49','48','47','46','45','44','43','42','41','40','39','38','37','36','35','34','33','32','31','30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01']
   Games:any=
-    [{"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
-      {"name":"Game 02","page":Game2Page,"icon":"ios-unlock","color":"secondary"},
-      {"name":"Game 03","page":Game3Page,"icon":"lock","color":"white"},
+     [{"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 02","page":Game2Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 03","page":Game3Page,"icon":"ios-unlock","color":"secondary"},
       {"name":"Game 04","icon":"lock","color":"white"},
       {"name":"Game 05","icon":"lock","color":"white"},
       {"name":"Game 06","icon":"lock","color":"white"},
@@ -109,7 +103,6 @@ export class Game2Page {
     ]
 
   result1:any;
-
   constructor(public storage:Storage ,private ng2Csv: Ng2CsvService,public zone:NgZone,public toastCtrl:ToastController ,public ngZone:NgZone,public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController) {
 
   }
@@ -126,29 +119,43 @@ export class Game2Page {
         setTimeout(()=>{
           this.block3=true
           setTimeout(()=>{
-            this.block9=true
-          },300)
+            this.block4=true
+            setTimeout(()=>{
+              this.block5=true
+              setTimeout(()=>{
+                this.block6=true
+                setTimeout(()=>{
+                  this.block7=true
+                  setTimeout(()=>{
+                    this.block8=true
+                    setTimeout(()=>{
+                      this.block9=true
+                    },500)
+                  },200)
+                },205)
+              },210)
+            },230)
+          },250)
         },300)
       },300)
     },300)
     this.eightt=true
-
     console.log('ionViewDidLoad DashboardPage');
   }
   gotolevel1(){
     this.game1=false;
-    this.gamename="Apple Colour Filling"
+    this.gamename="Digit Shelves"
   }
   goto(n){
 
     setTimeout(()=> {
 
-      var blk = Math.floor(Math.random() * n) + 1
+      var blk = Math.floor(Math.random() * 10)
       if (blk == 9 || blk == 0) {
         blk = 1
       }
       this.block = Number.parseInt(blk.toString())
-      var num = Math.floor(Math.random() * n) + 1
+      var num = Math.random() * 10
       this.number = Number.parseInt(num.toString())
       var index:number=this.blockarray.indexOf(this.block)
       var index2:number=this.numarray.indexOf(this.number)
@@ -157,12 +164,12 @@ export class Game2Page {
         while (index != -1 || index2 != -1) {
           console.log(JSON.stringify(this.blockarray) + JSON.stringify(this.numarray))
           console.log("loop start" + index + index2)
-          var blk = Math.floor(Math.random() * n) + 1
+          var blk = Math.floor(Math.random() * 10)
           if (blk == 9 || blk == 0) {
             blk = 1
           }
           this.block = Number.parseInt(blk.toString())
-          var num = Math.floor(Math.random() * n) + 1
+          var num = Math.random() * 10
           this.number = Number.parseInt(num.toString())
           index = this.blockarray.indexOf(this.block)
           index2 = this.numarray.indexOf(this.number)
@@ -179,12 +186,11 @@ export class Game2Page {
 
       }
       console.log("After loop")
-      this.audioplay(this.number)
       var colo = this.block.toString();
       this.blockarray.push(this.block)
       this.numarray.push(this.number)
       this.Strnumber = this.number.toString()
-     // this.getcount=this.getcount
+      // this.getcount=this.getcount
       this.result.push( this.block)
       switch (colo) {
         case "1":
@@ -275,7 +281,7 @@ export class Game2Page {
           this.first1 = false;
           break;
       }
-      this.checklist.push(n)
+      this.checklist.unshift(n)
       this.res_checklist = this.checklist.join()
       if (this.result.length == this.checklist.length) {
         setTimeout(()=>{
@@ -288,32 +294,29 @@ export class Game2Page {
     }
   }
   ionViewDidEnter(){
-   this.resultarray=this.navParams.get("result");
-   this.score=this.navParams.get("score");
+    this.resultarray=this.navParams.get("result");
+    this.score=this.navParams.get("score");
   }
   agamestart() {
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
     this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(3)
       setTimeout(() => {
         this.goto(3)
         setTimeout(() => {
           this.goto(3)
           setTimeout(() => {
             this.repeatshow=true
-             var ct = Math.random() + 0.5
-             this.index_number =1
-             var er = this.result[this.index_number]
-             this.result_number = er.number_res
-             this.result_numberr=this.result_number.toString()
-             this.repeatshow=true
-             this.presentToast1(this.result_numberr)
+            var ct = Math.random() + 0.5
+            this.index_number =1
+            var er = this.result[this.index_number]
+            this.result_number = er.number_res
+            this.result_numberr=this.result_number.toString()
+            this.repeatshow=true
+            this.presentToast1(this.result_numberr)
           }, 3000)
         }, 3000)
-      }, 3000)
     }, 100)
   }
   gamestart2() {
@@ -326,10 +329,8 @@ export class Game2Page {
       setTimeout(() => {
         this.goto(4)
         setTimeout(() => {
-           this.goto(4)
+          this.goto(4)
           setTimeout(() => {
-            this.goto(4)
-            setTimeout(() => {
               this.repeatshow=true
               var ct = Math.random() + 0.5
               this.index_number = 1
@@ -338,41 +339,38 @@ export class Game2Page {
               this.result_numberr=this.result_number.toString()
               this.presentToast1(this.result_numberr)
               this.repeatshow=true
-            },3000)
-          }, 3000)
+          },3000)
         }, 3000)
       }, 3000)
     }, 100)
-  }
+   }
   gamestart3() {
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
     this.gamestart1 = true;
-   setTimeout(() => {
-    this.goto(5)
-     setTimeout(() => {
+    setTimeout(() => {
       this.goto(5)
       setTimeout(() => {
         this.goto(5)
         setTimeout(() => {
           this.goto(5)
           setTimeout(() => {
-            this.goto(5)
-            setTimeout(() => {
-              this.repeatshow=true
-              var ct = Math.random() + 0.5
-              this.index_number = 2
-              var er = this.result[this.index_number]
-              this.result_number = er.number_res
-              this.result_numberr=this.result_number.toString()
-              this.presentToast1(this.result_numberr)
-              this.repeatshow=true
-            },3000)
+             this.goto(5)
+             setTimeout(() => {
+                this.repeatshow=true
+                var ct = Math.random() + 0.5
+                this.index_number = 2
+                var er = this.result[this.index_number]
+                this.result_number = er.number_res
+                this.result_numberr=this.result_number.toString()
+                this.presentToast1(this.result_numberr)
+                this.repeatshow=true
+             },3000)
           }, 3000)
         }, 3000)
       }, 3000)
-     }, 3000)
+
     }, 100)
   }
   gamestart4() {
@@ -389,10 +387,8 @@ export class Game2Page {
           setTimeout(() => {
             this.goto(6)
             setTimeout(() => {
-              this.goto(6)
+               this.goto(6)
               setTimeout(() => {
-                this.goto(6)
-                setTimeout(() => {
                   this.repeatshow=true
                   var ct = Math.random() + 0.5
                   this.index_number = 2
@@ -401,7 +397,6 @@ export class Game2Page {
                   this.result_numberr=this.result_number.toString()
                   this.presentToast1(this.result_numberr)
                   this.repeatshow=true
-                },3000)
               },3000)
             }, 3000)
           }, 3000)
@@ -425,8 +420,6 @@ export class Game2Page {
             setTimeout(() => {
               this.goto(7)
               setTimeout(() => {
-                this.goto(7)
-                setTimeout(() => {
                   this.goto(7)
                   setTimeout(() => {
                     this.repeatshow=true
@@ -437,8 +430,8 @@ export class Game2Page {
                     this.result_numberr=this.result_number.toString()
                     this.presentToast1(this.result_numberr)
                     this.repeatshow=true
+
                   },3000)
-                },3000)
               }, 3000)
 
             }, 3000)
@@ -477,9 +470,6 @@ export class Game2Page {
                 setTimeout(() => {
                   this.goto(8)
                   console.log("sixth time")
-                  setTimeout(() => {
-                    this.goto(8)
-                    console.log("sixth time")
                     setTimeout(()=>{
                       this.repeatshow=true
                       var ct = Math.random() + 0.5
@@ -489,7 +479,7 @@ export class Game2Page {
                       this.result_numberr=this.result_number.toString()
                       this.presentToast1(this.result_numberr)
                       this.repeatshow=true
-                    },3000)
+
                   },3000)
                 }, 3000)
               }, 3000)
@@ -669,54 +659,6 @@ export class Game2Page {
       }
     }
   }
-  audioplay(number) {
-    switch(number)
-    {
-      case 0:
-      {
-        break;
-      }
-      case 1:
-      {
-        break;
-      }
-      case 2:
-      {
-        break;
-      }
-      case 3:
-      {
-        break;
-      }
-      case 4:
-      {
-        break;
-      }
-      case 5:
-      {
-        break;
-      }
-      case 6:
-      {
-        break;
-      }
-      case 7:
-      {
-        break;
-      }
-      case 8:
-      {
-        break;
-      }
-      case 9:
-      {
-        break;
-      }
-
-    }
-
-
-  }
   calc(){
     var min= Number.parseInt(this.minShow)
     var sec= Number.parseInt(this.secShow)
@@ -750,12 +692,12 @@ export class Game2Page {
     this.attemptcpunt.push("1")
     var d = new Date()
     var month = d.getMonth()+1
-    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
+    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
     this.storage.set("game_history",JSON.stringify(this.d_result))
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
     this.res_result=this.result.join().toString();
-   // alert(this.res_result +"===="+blk)
+    // alert(this.res_result +"===="+blk)
     if(blk==this.res_result)
     {
       this.testarray.push(1)
@@ -767,21 +709,20 @@ export class Game2Page {
         this.score = this.score + 1;
         this.attempt = this.attempt - 1
 
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
         this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
-          this.score = this.score + 2;
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
-            "Game Name": "Apple Colour Filling",
+            "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
             "Level": this.level,
             "result": "S",
@@ -789,18 +730,10 @@ export class Game2Page {
           })
 
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
-
-          if(this.level==6){
-
-            let a = new Audio();
-            a.src = 'assets/audio/applause.mp3';
-            a.play();
-            this.gotogame_3()
-          }
         }
 
         else {
-          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
           this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
         }
@@ -854,7 +787,7 @@ export class Game2Page {
       this.checklist=[]
       this.result = []
 
-      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
+      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
 
       this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
@@ -901,8 +834,6 @@ export class Game2Page {
       }
 
     }
-
-
     this.first1 = true;
     this.first2 = true;
     this.first3 = true;
@@ -911,8 +842,6 @@ export class Game2Page {
     this.first6 = true;
     this.first7 = true;
     this.eightt = true;
-    //
-   // this.block9=true;
   }
   mssatrt() {
     this.zone.run(()=> {
@@ -1250,9 +1179,8 @@ export class Game2Page {
 
   }
   gotohome() {this.navCtrl.setRoot(MaindashboardPage)}
-
   gotogame_3(){
-    this.navCtrl.setRoot(Game3Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
+    this.navCtrl.setRoot(Game4Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
   }
 
 }

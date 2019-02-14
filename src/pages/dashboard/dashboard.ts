@@ -467,55 +467,37 @@ else {
   gamestart6 () {
     this.blockarray=[]
     this.numarray=[]
-
     this.Strnumber=""
     this.gamestart1 = true;
-
-
     setTimeout(() => {
       this.goto()
       console.log("first time")
-
     setTimeout(() => {
       this.goto()
-
       console.log("second time")
     setTimeout(() => {
       this.goto()
-
       console.log("third time")
     setTimeout(() => {
       this.goto()
-
       console.log("fourth time")
     setTimeout(() => {
       this.goto()
-
     setTimeout(() => {
       this.goto()
-
       console.log("fifth  time")
-
     setTimeout(() => {
       this.goto()
-
       console.log("sixth time")
-     setTimeout(()=>{
-
+    setTimeout(()=>{
       var ct = Math.random() + 0.5
       this.index_number = 4
       var er = this.result[this.index_number]
       this.result_number = er.number_res
-       this.result_numberr=this.result_number.toString()
+      this.result_numberr=this.result_number.toString()
+      this.presentToast1(this.result_numberr)
 
-       this.presentToast1(this.result_numberr)
-
-       let a = new Audio();
-       a.src = 'assets/audio/applause.mp3';
-       a.play()
-
-
-     },3000)
+    },3000)
     }, 3000)
     }, 3000)
     }, 3000)
@@ -753,7 +735,6 @@ else {
 
 
   }
-
   calc(){
     var min= Number.parseInt(this.minShow)
     var sec= Number.parseInt(this.secShow)
@@ -779,7 +760,6 @@ else {
     }
     return res_min.toString()+":"+res_sec.toString()+":"+ this.miliseconddd
   }
-
   check(num:number) {
     this.attemptcount=this.attemptcount+1
 
@@ -807,12 +787,10 @@ else {
          this.storage.set("performance_history",JSON.stringify(this.resultarray))
        }
        else {
-         this.score = this.score + 2;
-         this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Digit Shelves","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-         this.storage.set("performance_history",JSON.stringify(this.resultarray))
-       }
+        
          if(this.level==5||this.level==6) {
          if (this.attempt%3==0) {
+           this.score = this.score + 2;
            this.resultarray.push({
              "Login ID": this.navParams.get("Login ID"),
              "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
@@ -822,8 +800,17 @@ else {
              "result": "S",
              "Score": 4
            })
-
+           //this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Digit Shelves","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        
            this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+           if(this.level==6){
+
+             let a = new Audio();
+             a.src = 'assets/audio/applause.mp3';
+             a.play();
+             this.gotogame_2()
+           }
          }
 
           else {
@@ -834,7 +821,10 @@ else {
 
          }
       else {
-
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Digit Shelves","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
        }
 
       this.presentToast6()
@@ -1271,10 +1261,8 @@ else {
   }
   gotohome() {
   this.navCtrl.setRoot(MaindashboardPage)}
-
-
   gotogame_2(){
-    this.navCtrl.setRoot(Game2Page)
+    this.navCtrl.setRoot(Game2Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
   }
 
 }

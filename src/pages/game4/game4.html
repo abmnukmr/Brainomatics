@@ -3,6 +3,7 @@
 <ion-content padding class="cont">
 
   <div class="bg" >
+
     <div style="text-align: center;color: #fcd011">
       <h1 style="text-align: center;color: #fcd011">{{gamename}}</h1>
       <button ion-button clear icon-only (click)="gotohome()">
@@ -12,19 +13,25 @@
 
     <div style="width: 100%;">
       <ion-row>
+
         <ion-col col-3>
-          <h6 style="text-align: center;color: #fbfc7a">Countdown Time: {{minShow}}:{{secShow}}:{{miliseconddd}}</h6>
+          <h6 style="text-align: center;color: #fbfc7a">Countdown Time:{{fort}}</h6>
         </ion-col>
+
         <ion-col col-3>
-          <h6 style="text-align: center;color: #fcd011">Game2/Level{{level}}/Attempt:{{attemptcount}}/{{attempt}}</h6>
+          <h6 style="text-align: center;color: #fcd011">Game4/Level{{level}}/Attempt:{{attemptcount}}/{{attempt}}</h6>
         </ion-col>
+
         <ion-col col-3>
           <h6 style="text-align: center;color: #fcd011">Game: {{gamename}}</h6>
         </ion-col>
+
         <ion-col col-3>
           <h6  style="text-align: center;color: #fcd011">Score:{{score}}</h6>
         </ion-col>
+
       </ion-row>
+
     </div>
 
 
@@ -33,37 +40,78 @@
     <div style="width: 100%;margin-top:0%;text-align: center">
       <ion-row>
         <ion-col col-2>
-          <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index " [disabled]="game.name=='Game 03'?false:true" (click)="gotogame_3()">{{game.name}}
-            <ion-icon name="{{game.icon}}" [hidden]="i==1?true:false"></ion-icon>
+
+          <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index" [disabled]="game.name=='Game 05'?false:true"  (click)="gotogame_3()">{{game.name}}
+            <ion-icon name="{{game.icon}}" [hidden]="i==3?true:false"></ion-icon>
           </button><br>
+
+
         </ion-col>
 
         <ion-col col-8>
+
+
           <div [hidden]="game1">
+
             <ion-row style="text-align: center;margin-left:8%; margin-top:2%;" [hidden]="!start">
-              <div style="width:10%" *ngIf="level==1"></div>
-              <ion-col col-3 *ngIf="block1"   #block1 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first1" #first1>
+
+              <ion-col col-3 *ngIf="block1" #block1 >
+
+
+                <div  class="blinkgame4 glowapple" *ngIf="!first1" [hidden]='crack1' #first1>
+
+
                 </div>
-                <div (click)="checkresult(1)" *ngIf="first1"  class="stat"  style="height: 100px;width: 100px;margin:10px" #first>
+
+                <div (click)="checkresult(1)" *ngIf="first1" [hidden]='crack1'  class="stat"  style="height: 100px;width: 100px;margin:10px" #first>
+
                 </div>
-              </ion-col>
-              <ion-col col-3 *ngIf="block2"   #block2 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first2" #second2>
-                </div>
-                <div  (click)="checkresult(2)" class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="first2" #second>
-                </div>
-              </ion-col>
-              <ion-col col-3 *ngIf="block3"   #block3 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first3" #three3>
-                </div>
-                <div  (click)="checkresult(3)" class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="first3" #three>
+                <div  class="crack4 glowapple" *ngIf="crack1">
+                
                 </div>
               </ion-col>
-              <ion-col col-3 *ngIf="level>=2" #block4 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first4" #four4>
+
+              <ion-col col-3 *ngIf="block2" #block2 >
+
+                <div  class="blinkgame4 glowapple" *ngIf="!first2" [hidden]='crack2' #second2>
+
                 </div>
-                <div  class="stat" (click)="checkresult(4)" style="height: 100px;width: 100px;margin:10px" *ngIf="first4" #four>
+
+                <div  class="crack4 glowapple" *ngIf="crack2">
+                
+                </div>
+                <div  (click)="checkresult(2)" class="stat"  [hidden]='crack2' style="height: 100px;width: 100px;margin:10px" *ngIf="first2" #second>
+
+                </div>
+              </ion-col>
+
+
+              <ion-col col-3 *ngIf="block3" #block3 >
+
+                <div  class="blinkgame4 glowapple" *ngIf="!first3" [hidden]='crack3' #three3>
+
+
+                </div>
+                <div  class="crack4 glowapple" *ngIf="crack3">
+                
+                </div>
+
+                <div  (click)="checkresult(3)"  [hidden]='crack3' class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="first3" #three>
+
+                </div>
+              </ion-col>
+
+              <ion-col col-3 *ngIf="block4" #block4 >
+                <div  class="blinkgame4 glowapple" *ngIf="!first4"  [hidden]='crack4'#four4>
+
+
+                </div>
+                <div  class="crack4 glowapple" *ngIf="crack4" >
+                
+                </div>
+
+                <div  class="stat" (click)="checkresult(4)" [hidden]='crack4' style="height: 100px;width: 100px;margin:10px" *ngIf="first4" #four>
+
                 </div>
               </ion-col>
             </ion-row>
@@ -72,47 +120,91 @@
               <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
             </div>
 
+
             <ion-row style="text-align: center;margin-left:8%;margin-top: 2%" [hidden]="!start">
-              <ion-col col-3 *ngIf="level>=3" #block5 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first5" #five5>
+
+              <ion-col col-3 *ngIf="block5" #block5 >
+
+
+                <div  class="blinkgame4 glowapple" *ngIf="!first5" [hidden]='crack5' #five5>
+
+
                 </div>
-                <div  (click)="checkresult(5)"  class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="first5" #five>
+                <div  class="crack4 glowapple" *ngIf="crack5">
+                
+                </div>
+
+                <div  (click)="checkresult(5)"  [hidden]='crack5' class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="first5" #five>
+                </div>
+
+              </ion-col>
+
+
+
+              <ion-col col-3 *ngIf="block6" #block6 >
+
+
+                <div  class="blinkgame4 glowapple" [hidden]='crack6' *ngIf="!first6" #six6>
+
+
+                </div>
+                
+                <div  class="crack4 glowapple" *ngIf="crack6">
+                
+                </div>
+
+                <div  class="stat" (click)="checkresult(6)" [hidden]='crack6' style="height: 100px;width: 100px;margin:10px" *ngIf="first6" #six>
+                </div>
+
+              </ion-col>
+              
+
+              <ion-col col-3 *ngIf="block7" #block7 >
+
+
+                <div  class="blinkgame4 glowapple" *ngIf="!first7" [hidden]='crack7' #seven7>
+
+
+                </div>
+                <div  class="crack4 glowapple" *ngIf="crack7">
+                
+                </div>
+                <div (click)="checkresult(7)"  [hidden]='crack7' class="stat"   style="height: 100px;width: 100px;margin:10px" *ngIf="first7" #seven>
                 </div>
               </ion-col>
 
-              <ion-col col-3 *ngIf="level>=4" #block6 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first6" #six6>
+              <ion-col col-3 *ngIf="block8" #block8 >
+
+                <div  class="blinkgame4 glowapple" *ngIf="!eightt" [hidden]='crack8' #eight8>
+
+
                 </div>
-                <div  class="stat" (click)="checkresult(6)" style="height: 100px;width: 100px;margin:10px" *ngIf="first6" #six>
+                <div  class="crack4 glowapple" *ngIf="crack8">
+                
                 </div>
+
+                <div  (click)="checkresult(8)" [hidden]='crack8' class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="eightt" #eight>
+
+                </div>
+
+
               </ion-col>
 
-              <ion-col col-3 *ngIf="level>=5" #block7 >
-                <div  class="blinkgame2 glowapple" *ngIf="!first7" #seven7>
-                </div>
-                <div (click)="checkresult(7)" class="stat"  style="height: 100px;width: 100px;margin:10px" *ngIf="first7" #seven>
-                </div>
-              </ion-col>
-
-              <ion-col col-3 *ngIf="level>=6" #block8 >
-                <div  class="blinkgame2 glowapple" *ngIf="!eightt" #eight8>
-                </div>
-                <div  (click)="checkresult(8)" class="stat" style="height: 100px;width: 100px;margin:10px" *ngIf="eightt" #eight>
-                </div>
-              </ion-col>
             </ion-row>
+
+
 
             <div style="text-align: center" *ngIf="block9">
               <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 5%" ion-button (click)="startgame()">I'm ready</button>
             </div>
 
             <div style="text-align: center" *ngIf="block99">
-              <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 5%" ion-button (click)="startgame3()">I'm ready</button>
+              <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 5%" ion-button (click)="startgame()">I'm ready</button>
             </div>
 
 
             <div style="text-align: center">
-              <button ion-button round color="secondary"  *ngIf="repeatshow">Please select apple in same order. </button>
+              <button ion-button round color="secondary"  *ngIf="repeatshow">Please select cupboard in same order. </button>
             </div>
             <ion-row style="text-align: center;margin-left:8%;margin-top:2%" >
 
@@ -128,7 +220,7 @@
 
                 <div style="width: 72%;text-align: center">
 
-                  <button ion-button round color="white" (click)="startgame()" *ngIf="repeatshow">Repeat</button>
+                  <button ion-button round color="white" (click)="startgame3()" *ngIf="repeatshow">Repeat</button>
                 </div>
 
 
@@ -142,9 +234,15 @@
             </ion-row>
 
           </div>
+
+
+
         </ion-col>
 
+
         <ion-col col-2>
+
+
           <button ion-button icon-right [color]="level<1?'white':'primary'" [disabled]="level<1?true:false">LEVEL 01
             <ion-icon name="lock" [hidden]="level<1?false:true" [color]="level==1?'white':'primary'"></ion-icon>
           </button> <br>
@@ -168,28 +266,43 @@
           <button ion-button icon-right  [color]="level< 6?'white':'primary'" [disabled]="level<6?true:false">LEVEL 06
             <ion-icon name="lock" [hidden]="level<6?false:true"></ion-icon>
           </button> <br>
+
+
+
+
         </ion-col>
+
+
       </ion-row>
+
     </div>
 
     <ion-footer >
 
       <ion-row>
+
         <ion-col col-3>
+
         </ion-col>
 
         <ion-col col-3>
+
           <h1 style="text-align: center;color: white">Game1/Level{{level}}</h1>
+
         </ion-col>
 
         <ion-col col-3>
+
           <h1 style="text-align: center;color: white"> {{gamename}}</h1>
+
         </ion-col>
 
         <ion-col col-3>
         </ion-col>
       </ion-row>
+
     </ion-footer>
+
   </div >
 
 </ion-content>

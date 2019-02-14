@@ -1,6 +1,7 @@
+page-game4 {
 
 
-page-game2 {
+
 
 
 
@@ -32,18 +33,34 @@ page-game2 {
       width: 100px;
       height: 100px;
       position: relative;
-      background-image: url('../assets/imgs/green_apple.png');
+      background-image: url('../assets/imgs/egg.png');
       background-size: contain;
       background-repeat: no-repeat;
 
     }
 
-    .blinkgame2{
+
+
+    .crack4{
       width: 120px;
       height: 120px;
-     // margin: 10px;
+      // margin: 10px;
+     // position: fixed;
+      background-image: url('../assets/imgs/egghatch.png');
+      background-size: contain;
+      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+
+      animation-name: exampleapple;
+      background-repeat: no-repeat;
+      animation-duration: 4s;
+    }
+    .blinkgame4{
+      width: 120px;
+      height: 120px;
+      // margin: 10px;
       position: fixed;
-      background-image: url('../assets/imgs/red_apple.png');
+      background-image: url('../assets/imgs/egg.png');
       background-size: contain;
       -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
       -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
@@ -57,45 +74,45 @@ page-game2 {
       0%   {//background-color:red;
 
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-repeat: no-repeat;
         background-size: contain;
 
       }
       5% { // background: white ;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       10%   { //background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
 
       15% {// background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       20%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
 
       25% { //background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       30%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -103,14 +120,14 @@ page-game2 {
 
 
       35% {
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       40%   {//background-color:red;
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -119,26 +136,26 @@ page-game2 {
 
 
       45% { //background: white
-        background: url('../assets/imgs/red_apple.png') ;
+        background: url('../assets/imgs/egg.png') ;
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       50%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
 
       55% {// background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       60%   {///background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -146,40 +163,40 @@ page-game2 {
       }
 
       65% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       70%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
 
       75% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
       80%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
       }
 
       85% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
 
       }
       90%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -187,14 +204,14 @@ page-game2 {
       }
 
       95% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
         background-repeat: no-repeat;
 
 
       }
       100%   {
-        background-image: url('../assets/imgs/red_apple.png') ;
+        background-image: url('../assets/imgs/egg.png') ;
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -209,11 +226,11 @@ page-game2 {
 
 
 
-    .blink2game2{
+    .blink2game4{
       width: 100px;
       height: 100px;
       position: fixed;
-      background-image: url('../assets/imgs/red_apple.png');
+      background-image: url('../assets/imgs/egg.png');
       -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
       -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
       animation-name: example2apple;
@@ -224,52 +241,52 @@ page-game2 {
       0%   {//background-color:red;
 
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       5% { // background: white ;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       10%   { //background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       15% {// background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       20%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       25% { //background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       30%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
 
       35% {
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       40%   {//background-color:red;
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
@@ -277,71 +294,71 @@ page-game2 {
 
 
       45% { //background: white
-        background: url('../assets/imgs/red_apple.png') ;
+        background: url('../assets/imgs/egg.png') ;
         background-size: contain;
 
       }
       50%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       55% {// background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       60%   {///background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
 
       65% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       70%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       75% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       80%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       85% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
       90%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
 
       95% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
       100%   {
-        background-image: url('../assets/imgs/red_apple.png') ;
+        background-image: url('../assets/imgs/egg.png') ;
         background-size: contain;
 
       }
@@ -354,52 +371,52 @@ page-game2 {
       0%   {//background-color:red;
 
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       5% { // background: white ;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       10%   { //background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       15% {// background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       20%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       25% { //background: white;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       30%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
 
       35% {
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       40%   {//background-color:red;
 
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
@@ -407,71 +424,71 @@ page-game2 {
 
 
       45% { //background: white
-        background: url('../assets/imgs/red_apple.png') ;
+        background: url('../assets/imgs/egg.png') ;
         background-size: contain;
 
       }
       50%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       55% {// background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       60%   {///background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
 
       65% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       70%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       75% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
       80%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
       }
 
       85% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
       90%   {//background-color:red;
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
 
       95% { //background: white
-        background-image: url('../assets/imgs/red_apple.png');
+        background-image: url('../assets/imgs/egg.png');
         background-size: contain;
 
 
       }
       100%   {
-        background-image: url('../assets/imgs/red_apple.png') ;
+        background-image: url('../assets/imgs/egg.png') ;
         background-size: contain;
 
       }
@@ -480,30 +497,31 @@ page-game2 {
     }
 
 
-  .glowapple {
-    color: #fdf6fb;
-    text-align: center;
-    -webkit-animation: glow 0.8s ease-in-out infinite alternate;
-    -moz-animation: glow 0.8s ease-in-out infinite alternate;
-    animation: glowapp 0.8s ease-in-out infinite alternate;
-  }
-
-  @-webkit-keyframes glowapp {
-    10% {
-     // box-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-      transform: translateY(0);
-
-    }
-    50% {
-     // box-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-      transform: translateY(-10px);
+    .glowapple {
+      color: #fdf6fb;
+      text-align: center;
+      -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+      -moz-animation: glow 0.8s ease-in-out infinite alternate;
+      animation: glowapp 0.8s ease-in-out infinite alternate;
     }
 
-    100% {
-      //box-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6;
-      transform: translateY(0);
+    @-webkit-keyframes glowapp {
+      10% {
+         //box-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        transform: translateY(0);
+
+      }
+      50% {
+         //box-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        transform: translateY(-10px);
+      }
+
+      100% {
+        //box-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6;
+        transform: translateY(0);
+      }
     }
-  }
+
 
 
 
@@ -511,4 +529,3 @@ page-game2 {
 
 
 }
-

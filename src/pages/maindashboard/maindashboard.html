@@ -1,53 +1,39 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-
 <ion-content padding class="cont" >
+    <div class="divwidthdash bgnds">
+      <div class="btnbgo pading">
+        <ion-row >
+          <ion-col col-6>
+            <button ion-button block  color="primary" class="marginbutton"  (click)="play()">
+              PLAY
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button block  color="primary" class="marginbutton" (click)="gotoins()" >
+              INSTRUCTION
+            </button>
+          </ion-col>
+        </ion-row>
 
-  <div class="divwidthdash bgnds">
-
-    <div class="btnbgo pading">
-      <ion-row >
-        <ion-col col-6>
-          <button ion-button block  color="primary" class="marginbutton"  (click)="play()">
-            PLAY
-          </button>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button block  color="primary" class="marginbutton" (click)="gotoins()" >
-            INSTRUCTION
-          </button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-6>
-          <button ion-button block  color="primary" class="marginbutton" >
-            TRY ME
-          </button>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button block  color="danger" class="marginbutton" (click)="exit()" >
-            EXIT
-          </button>
-        </ion-col>
-      </ion-row>
-
-
-    <button ion-button block  color="secondary" class="marginbutton" >
-      Account
-    </button>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button block  color="primary" class="marginbutton" >
+              TRY ME
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button block  color="danger" class="marginbutton" (click)="exit()" >
+              EXIT
+            </button>
+          </ion-col>
+        </ion-row>
+        <button ion-button block  color="secondary" class="marginbutton" >
+          Account
+        </button>
+      </div>
+      <div style="width: 100%;text-align: center">
+      <button ion-button clear icon-only (click)="downlaod()">  Download game history
+        <ion-icon name="download" color="light"></ion-icon>
+      </button>
+      </div>
     </div>
-
-    <div style="width: 100%;text-align: center">
-    <button ion-button clear icon-only (click)="downlaod()">  Download game history
-      <ion-icon name="download" color="light"></ion-icon>
-
-    </button>
-    </div>
-    </div>
-  </ion-content>
+</ion-content>

@@ -1,5 +1,6 @@
-page-dashboard {
+page-game5 {
 
+   
   .bg{
     background: #35a6aa;
   }
@@ -23,52 +24,55 @@ page-dashboard {
   }
 
   .stat{
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
     position: relative;
-    background-image: url('../assets/imgs/close.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: black;
+     }
+  .col{
+    flex:0% 0% 20%;
+  }
+  .column{
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
   }
 
   .blinkgame1{
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    position: fixed;
-    background-image: url('../assets/imgs/open.png');
-    background-size: cover;
-    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-    animation-name: example;
-    animation-duration: 4s;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    //position: fixed;
+    background: red;
+    
   }
 
   @keyframes example {
     0%   {//background-color:red;
-      background-image: url('../assets/imgs/open.png');
+      //background-image: url('../assets/imgs/open.png');
       background-size: cover;
     }
     5% { // background: white ;
-      background-image: url('../assets/imgs/open.png');
+     // background-image: url('../assets/imgs/open.png');
       background-size: cover;
     }
     10%   { //background-color:red;
-      background-image: url('../assets/imgs/open.png');
+      //background-image: url('../assets/imgs/open.png');
       background-size: cover;
     }
     15% {// background: white;
-      background-image: url('../assets/imgs/open.png');
+      //background-image: url('../assets/imgs/open.png');
       background-size: cover;
     }
     20% {//background-color:red;
-      background-image: url('../assets/imgs/open.png');
-      background-size: cover;
+      // background-image: url('../assets/imgs/open.png');
+      // background-size: cover;
     }
 
     25% { //background: white;
-      background-image: url('../assets/imgs/open.png');
+      //background-image: url('../assets/imgs/open.png');
       background-size: cover;
 
     }
@@ -467,5 +471,6 @@ page-dashboard {
       background: yellow;
     }
   }
-}
+  
 
+}

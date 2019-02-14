@@ -1,0 +1,537 @@
+page-game9 {
+    .bg{
+        background: #35a6aa;
+      }
+    
+      .scroll-content {
+        background: #35a6aa;
+        height: 150%;
+      }
+    
+      .scroll-content::-webkit-scrollbar {
+        display:block;  // Safari and Chrome
+      }
+    
+    
+    
+      .cont{
+        width: 78%;
+        margin-left: 11%;
+        margin-right: 11%;
+        margin-top: 4%;
+      }
+    
+      .stat{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        position: relative;
+        background-image: url('../assets/imgs/off.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+
+         }
+
+      .stat1{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        position: relative;
+        background-image: url('../assets/imgs/off.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        transform: rotate(90deg);
+       }
+
+      .stat11{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        position: relative;
+        background-image: url('../assets/imgs/off.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        transform: rotate(135deg);
+       }
+
+      .stat22{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        position: relative;
+        background-image: url('../assets/imgs/off.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        transform: rotate(-135deg);
+       }
+       .stat2{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        position: relative;
+        background-image: url('../assets/imgs/off.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+        transform: rotate(-90deg);
+       }
+       
+
+
+
+      .col{
+        flex:0% 0% 20%;
+      }
+      .column{
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+        margin: 0px;
+      }
+      .window{
+        background-image: url('../assets/imgs/window1.png');
+        background-size: contain; 
+        background-repeat: no-repeat;
+      }
+    
+      .bblinkgame1{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        background-image: url('../assets/imgs/on.png');
+      }
+    
+      @keyframes example {
+        0%   {//background-color:red;
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        5% { // background: white ;
+            
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        10%   { //background-color:red;
+            
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        15% {// background: white;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        20% {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+           background-size: cover;
+        }
+    
+        25% { //background: white;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        30%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        35% {
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        40%   {//background-color:red;
+    
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       45% { //background: white
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        50%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        55% {// background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        60%   {///background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        65% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        70%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        75% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        80%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        85% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+        90%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        95% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       100%   {
+        background-image: url('../assets/imgs/on.png');
+        background-size: cover;
+    
+        }
+    
+      }
+    
+    
+      .bblinkgame12{
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+        -webkit-animation-name: example12; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+        animation-name: example12;
+        animation-duration: 4s;
+
+        background-image: url('../assets/imgs/on.png');
+        transform: rotate(-90deg);
+      }
+    
+      @keyframes example12 {
+        0%   {//background-color:red;
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        5% { // background: white ;
+            
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        10%   { //background-color:red;
+            
+          background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        15% {// background: white;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        20% {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+           background-size: cover;
+        }
+    
+        25% { //background: white;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        30%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        35% {
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        40%   {//background-color:red;
+    
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       45% { //background: white
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        50%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        55% {// background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        60%   {///background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        65% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        70%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        75% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        80%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        85% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+        90%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        95% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       100%   {
+        background-image: url('../assets/imgs/on.png');
+        background-size: cover;
+    
+        }
+    
+      }
+    
+    
+      .bblinkgame13{
+        width: 40px;
+        height: 40px;
+        
+      }
+    
+      @keyframes example13 {
+        0%   {//background-color:red;
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        5% { // background: white ;
+            
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        10%   { //background-color:red;
+            
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        15% {// background: white;
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+        }
+        20% {//background-color:red;
+
+        background-image: url('../assets/imgs/on.png');
+           background-size: cover;
+        }
+    
+        25% { //background: white;
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        30%   {//background-color:red;
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        35% {
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        40%   {//background-color:red;
+    
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       45% { //background: white
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        50%   {//background-color:red;
+
+        background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        55% {// background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        60%   {///background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        65% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        70%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        75% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+        80%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+        }
+    
+        85% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+        90%   {//background-color:red;
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+    
+        95% { //background: white
+            background-image: url('../assets/imgs/on.png');
+          background-size: cover;
+    
+    
+        }
+       100%   {
+        background-image: url('../assets/imgs/on.png');
+        background-size: cover;
+    
+        }
+    
+      }
+     
+    
+      .result{
+        background-image: url('../assets/imgs/resultring.png') ;
+        background-size: cover;
+      }
+    
+      .glow {
+        color: #fdf6fb;
+        text-align: center;
+        -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+        -moz-animation: glow 0.8s ease-in-out infinite alternate;
+        animation: glow 0.8s ease-in-out infinite alternate;
+      }
+    
+      @-webkit-keyframes glow {
+        10% {
+          text-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+          transform: translateY(0);
+        }
+        50% {
+          text-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 60px #ff4da6;
+          transform: translateY(-10px);
+        }
+    
+        100% {
+          text-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 60px #ff4da6, 0 0 90px #ff4da6;
+          transform: translateY(0);
+        }
+      }
+    
+    
+    
+    
+      .bonus{
+        > div {
+          background: #41dbb4;
+        }
+      }
+      .wrong{
+        > div {
+    
+          background: red;
+        }
+      }
+      .yellow{
+        > div {
+    
+          background: yellow;
+        }
+      }
+
+}

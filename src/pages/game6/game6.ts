@@ -1,15 +1,18 @@
 import {Component, ElementRef, NgZone, ViewChild} from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Game1Page} from "../game1/game1";
-import {NativeAudio} from "@ionic-native/native-audio";
 import {Ng2CsvService} from "ng2csv";
+import { Game4Page } from '../game4/game4';
+import { Game3Page } from '../game3/game3';
+import { Game2Page } from '../game2/game2';
+import { Game5Page } from '../game5/game5';
+import { Game7Page } from '../game7/game7';
+
 import {MaindashboardPage} from "../maindashboard/maindashboard";
 import { Storage } from '@ionic/storage';
-import {Game3Page} from "../game3/game3";
-
-
+import { t } from '@angular/core/src/render3';
 /**
- * Generated class for the Game2Page page.
+ * Generated class for the Game6Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -17,10 +20,35 @@ import {Game3Page} from "../game3/game3";
 
 @IonicPage()
 @Component({
-  selector: 'page-game2',
-  templateUrl: 'game2.html',
+  selector: 'page-game6',
+  templateUrl: 'game6.html',
 })
-export class Game2Page {
+export class Game6Page {
+
+
+  Sgame:number=0
+  s11:boolean=false;
+  s12:boolean=false;
+  s13:boolean=false;
+  s14:boolean=false;
+  s15:boolean=false;
+  s16:boolean=false;
+  
+
+  _blockarray=[]
+  break:boolean=true;
+  internv:any;
+  fort:any;
+  crackchech:any;
+  checkswitch:boolean=false;
+  crack1:boolean=false;
+  crack2:boolean=false;
+  crack3:boolean=false;
+  crack4:boolean=false;
+  crack5:boolean=false;
+  crack6:boolean=false;
+  crack7:boolean=false;
+  crack8:boolean=false;
   res_result:any;
   res_checklist:any;
   counter:number=0
@@ -40,7 +68,12 @@ export class Game2Page {
   block7:boolean=false
   block8:boolean=false
   block9:boolean=false
+  block10:boolean=false
+  block11:boolean=false
+  block12:boolean=false
   block99:boolean=false
+  nine:boolean=true;
+  zero:boolean=true;
   d_result:any=[]
   number:number;
   Strnumber:string="";
@@ -73,7 +106,7 @@ export class Game2Page {
   index_number:number;
   result_number:number;
   result_numberr:string=""
-  gamename:any="Apple Colour Filling";
+  gamename:any="Peeping cuckoo joint";
   game1:boolean=false;
   blockarray=[]
   numarray=[]
@@ -85,18 +118,21 @@ export class Game2Page {
   attemptcount:number=0;
   getcount:number=0;
   repeatshow:boolean=false;
+  game4array=[1,2,3,4]
+  game6array=[1,2,3,4,5,6]
   secarray:any=['00','59','58','57','56','55', '54', '53','52','51','50','49','48','47','46','45','44','43','42','41','40','39','38','37','36','35','34','33','32','31','30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01']
   Games:any=
     [{"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
-      {"name":"Game 02","page":Game2Page,"icon":"ios-unlock","color":"secondary"},
-      {"name":"Game 03","page":Game3Page,"icon":"lock","color":"white"},
-      {"name":"Game 04","icon":"lock","color":"white"},
-      {"name":"Game 05","icon":"lock","color":"white"},
-      {"name":"Game 06","icon":"lock","color":"white"},
+      {"name":"Game 02","page":Game2Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 03","page":Game3Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 04","page":Game4Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 05","page":Game5Page,"icon":"ios-unlock","color":"primary"},
+      {"name":"Game 06","page":Game6Page,"icon":"ios-unlock","color":"secondary"},
       {"name":"Game 07","icon":"lock","color":"white"},
       {"name":"Game 08","icon":"lock","color":"white"},
       {"name":"Game 09","icon":"lock","color":"white"},
       {"name":"Game 10","icon":"lock","color":"white"}
+
     ]
 
   Level:any=
@@ -108,8 +144,9 @@ export class Game2Page {
       {"name":"Level 06","icon":"lock","color":"white"}
     ]
 
+   
+  check4:boolean=false;
   result1:any;
-
   constructor(public storage:Storage ,private ng2Csv: Ng2CsvService,public zone:NgZone,public toastCtrl:ToastController ,public ngZone:NgZone,public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController) {
 
   }
@@ -126,385 +163,604 @@ export class Game2Page {
         setTimeout(()=>{
           this.block3=true
           setTimeout(()=>{
-            this.block9=true
-          },300)
+            this.block4=true
+            setTimeout(()=>{
+              this.block5=true
+              setTimeout(()=>{
+                this.block6=true
+                setTimeout(()=>{
+                  this.block7=true
+                  setTimeout(()=>{
+                    this.block8=true
+                    setTimeout(()=>{
+                        this.block10=true
+                        setTimeout(()=>{
+                          this.block11=true
+                          setTimeout(()=>{
+                            this.block9=true
+                            this.block12=true
+                          },500)
+                        },500)
+                    },500)
+                  },200)
+                },205)
+              },210)
+            },230)
+          },250)
         },300)
       },300)
     },300)
     this.eightt=true
-
     console.log('ionViewDidLoad DashboardPage');
   }
-  gotolevel1(){
-    this.game1=false;
-    this.gamename="Apple Colour Filling"
-  }
-  goto(n){
+  
+  goto(){
+    setTimeout( ()=>{
+    var blk = this.randomIntFromInterval(1,4)
+    this.block = Number.parseInt(blk.toString())
+    var colo = this.block.toString();
+    this.blockarray.push(colo)
+    this.Strnumber = this.block.toString()
+    
+  },100)
 
-    setTimeout(()=> {
-
-      var blk = Math.floor(Math.random() * n) + 1
-      if (blk == 9 || blk == 0) {
-        blk = 1
-      }
-      this.block = Number.parseInt(blk.toString())
-      var num = Math.floor(Math.random() * n) + 1
-      this.number = Number.parseInt(num.toString())
-      var index:number=this.blockarray.indexOf(this.block)
-      var index2:number=this.numarray.indexOf(this.number)
-      console.log("inloop"+index + index2)
-      if(index != -1 || index2 !=-1) {
-        while (index != -1 || index2 != -1) {
-          console.log(JSON.stringify(this.blockarray) + JSON.stringify(this.numarray))
-          console.log("loop start" + index + index2)
-          var blk = Math.floor(Math.random() * n) + 1
-          if (blk == 9 || blk == 0) {
-            blk = 1
-          }
-          this.block = Number.parseInt(blk.toString())
-          var num = Math.floor(Math.random() * n) + 1
-          this.number = Number.parseInt(num.toString())
-          index = this.blockarray.indexOf(this.block)
-          index2 = this.numarray.indexOf(this.number)
-          console.log("after" + index + index2)
-          if (index2 == -1 && index == -1) {
-            break;
-          }
-          else {
-            continue;
-          }
-        }
-      }
-      else {
-
-      }
-      console.log("After loop")
-      this.audioplay(this.number)
-      var colo = this.block.toString();
-      this.blockarray.push(this.block)
-      this.numarray.push(this.number)
-      this.Strnumber = this.number.toString()
-     // this.getcount=this.getcount
-      this.result.push( this.block)
-      switch (colo) {
-        case "1":
-          this.first1 = false;
-
-          break;
-        case "2":
-          this.first2 = false;
-
-          break;
-        case "3":
-          this.first3 = false;
-
-          break;
-        case "4":
-          this.first4 = false;
-          break;
-        case "5":
-          this.first5 = false;
-          break;
-        case "6":
-          this.first6 = false;
-          break;
-        case "7":
-          this.first7 = false;
-          break;
-        case "8":
-          this.eightt = false;
-          break;
-        case "9":
-          this.first1 = false;
-          break;
-        case "0":
-          this.first1 = false;
-          break;
-      }
-
-      setTimeout(() => {
-        console.log("okk")
-        this.first1 = true;
-        this.first2 = true;
-        this.first3 = true;
-        this.first4 = true;
-        this.first5 = true;
-        this.first6 = true;
-        this.first7 = true;
-        this.eightt = true;
-        this.res_result=this.result.join();
-      }, 2000)
-
-
-    },1000)
-  }
-  checkresult(n){
-    if(this.block99==false) {
+  } 
+ 
+ checkresult(n){
+   // if(this.block9==false) {
       switch (n.toString()) {
         case "1":
           this.first1 = false;
-
+ 
           break;
         case "2":
           this.first2 = false;
-
+       
           break;
         case "3":
           this.first3 = false;
-
+         
           break;
         case "4":
           this.first4 = false;
+      
           break;
         case "5":
           this.first5 = false;
+         
           break;
         case "6":
           this.first6 = false;
-          break;
-        case "7":
-          this.first7 = false;
-          break;
-        case "8":
-          this.eightt = false;
-          break;
-        case "9":
-          this.first1 = false;
-          break;
-        case "0":
-          this.first1 = false;
-          break;
+         break;
+        
       }
-      this.checklist.push(n)
+      this.checklist.unshift(n)
+      //alert(this.checklist)
       this.res_checklist = this.checklist.join()
       if (this.result.length == this.checklist.length) {
         setTimeout(()=>{
           this.check()
-        },2000)
+        },500)
       }
       else {
 
       }
-    }
+   // }
   }
   ionViewDidEnter(){
-   this.resultarray=this.navParams.get("result");
-   this.score=this.navParams.get("score");
+    this.resultarray=this.navParams.get("result");
+    this.score=this.navParams.get("score");
   }
-  agamestart() {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(3)
-      setTimeout(() => {
-        this.goto(3)
-        setTimeout(() => {
-          this.goto(3)
-          setTimeout(() => {
-            this.repeatshow=true
-             var ct = Math.random() + 0.5
-             this.index_number =1
-             var er = this.result[this.index_number]
-             this.result_number = er.number_res
-             this.result_numberr=this.result_number.toString()
-             this.repeatshow=true
-             this.presentToast1(this.result_numberr)
-          }, 3000)
-        }, 3000)
-      }, 3000)
-    }, 100)
+  gameon()
+  {
+    
   }
-  gamestart2() {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(4)
-      setTimeout(() => {
-        this.goto(4)
-        setTimeout(() => {
-           this.goto(4)
-          setTimeout(() => {
-            this.goto(4)
-            setTimeout(() => {
-              this.repeatshow=true
-              var ct = Math.random() + 0.5
-              this.index_number = 1
-              var er = this.result[this.index_number]
-              this.result_number = er.number_res
-              this.result_numberr=this.result_number.toString()
-              this.presentToast1(this.result_numberr)
-              this.repeatshow=true
-            },3000)
-          }, 3000)
-        }, 3000)
-      }, 3000)
-    }, 100)
+  randomIntFromInterval(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
   }
-  gamestart3() {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-   setTimeout(() => {
-    this.goto(5)
-     setTimeout(() => {
-      this.goto(5)
-      setTimeout(() => {
-        this.goto(5)
-        setTimeout(() => {
-          this.goto(5)
-          setTimeout(() => {
-            this.goto(5)
-            setTimeout(() => {
-              this.repeatshow=true
-              var ct = Math.random() + 0.5
-              this.index_number = 2
-              var er = this.result[this.index_number]
-              this.result_number = er.number_res
-              this.result_numberr=this.result_number.toString()
-              this.presentToast1(this.result_numberr)
-              this.repeatshow=true
-            },3000)
-          }, 3000)
-        }, 3000)
-      }, 3000)
-     }, 3000)
-    }, 100)
-  }
-  gamestart4() {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(6)
-      setTimeout(() => {
-        this.goto(6)
-        setTimeout(() => {
-          this.goto(6)
-          setTimeout(() => {
-            this.goto(6)
-            setTimeout(() => {
-              this.goto(6)
-              setTimeout(() => {
-                this.goto(6)
-                setTimeout(() => {
-                  this.repeatshow=true
-                  var ct = Math.random() + 0.5
-                  this.index_number = 2
-                  var er = this.result[this.index_number]
-                  this.result_number = er.number_res
-                  this.result_numberr=this.result_number.toString()
-                  this.presentToast1(this.result_numberr)
-                  this.repeatshow=true
-                },3000)
-              },3000)
-            }, 3000)
-          }, 3000)
-        }, 3000)
-      }, 3000)
-    }, 100)
-  }
-  gamestart5() {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(7)
-      setTimeout(() => {
-        this.goto(7)
-        setTimeout(() => {
-          this.goto(7)
-          setTimeout(() => {
-            this.goto(7)
-            setTimeout(() => {
-              this.goto(7)
-              setTimeout(() => {
-                this.goto(7)
-                setTimeout(() => {
-                  this.goto(7)
-                  setTimeout(() => {
-                    this.repeatshow=true
-                    var ct = Math.random() + 0.5
-                    this.index_number =3
-                    var er = this.result[this.index_number]
-                    this.result_number = er.number_res
-                    this.result_numberr=this.result_number.toString()
-                    this.presentToast1(this.result_numberr)
-                    this.repeatshow=true
-                  },3000)
-                },3000)
-              }, 3000)
 
-            }, 3000)
 
-          }, 3000)
-
-        }, 3000)
-
-      }, 3000)
-
-    }, 100)
-
+game_(n)
+{
+  this.game4array=[1,2,3,4]
+  this.block9=false;
+  this.game4array.sort((a, b)=>{return 0.5 - Math.random()});
+  var _index = this.randomIntFromInterval(0,3)
+  var _number = this.game4array[_index]
+  this.result.unshift(_number)
+  this.game4array.splice(_index, 0, _number);
+    if(n>1){
+      for(let i=0;i<n-1;i++){
+        var O_number = this.randomIntFromInterval(1,4)
+        while(this.game4array[this.game4array.length-1]==O_number){
+          O_number = this.randomIntFromInterval(1,4)
+        } 
+        this.game4array.push(O_number);
+        //this.result.unshift(_number)
+      }
+    }
+    for(let k=0;k<this.game4array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game4array[k])
+    },k*2500)
   }
-  gamestart6 () {
-    this.blockarray=[]
-    this.numarray=[]
-    this.Strnumber=""
-    this.gamestart1 = true;
-    setTimeout(() => {
-      this.goto(8)
-      console.log("first time")
-      setTimeout(() => {
-        this.goto(8)
-        console.log("second time")
-        setTimeout(() => {
-          this.goto(8)
-          console.log("third time")
-          setTimeout(() => {
-            this.goto(8)
-            console.log("fourth time")
-            setTimeout(() => {
-              this.goto(8)
-              setTimeout(() => {
-                this.goto(8)
-                console.log("fifth  time")
-                setTimeout(() => {
-                  this.goto(8)
-                  console.log("sixth time")
-                  setTimeout(() => {
-                    this.goto(8)
-                    console.log("sixth time")
-                    setTimeout(()=>{
-                      this.repeatshow=true
-                      var ct = Math.random() + 0.5
-                      this.index_number = 4
-                      var er = this.result[this.index_number]
-                      this.result_number = er.number_res
-                      this.result_numberr=this.result_number.toString()
-                      this.presentToast1(this.result_numberr)
-                      this.repeatshow=true
-                    },3000)
-                  },3000)
-                }, 3000)
-              }, 3000)
-            }, 3000)
-          }, 3000)
-        }, 3000)
-      }, 3000)
-    }, 100)
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game4array.length*2500)
+
+
+}
+
+game_3()
+{  
+  this.game4array=[1,2,3,4]
+  this.block9=false;
+  this.game4array.sort((a, b)=>{return 0.5 - Math.random()});
+  var _index = this.randomIntFromInterval(0,3)
+  var _number = this.game4array[_index]
+  this.game4array.splice(_index, 0, _number);
+  this.result.unshift(_number)
+    var O_number = this.randomIntFromInterval(1,4)
+    while(this.game4array[this.game4array.length-1]==O_number){
+      O_number = this.randomIntFromInterval(1,4)
+    } 
+    this.game4array.push(O_number);
+    
+    var n_number = this.randomIntFromInterval(1,4)
+
+    while(n_number==_number)
+    {
+      var n_number = this.randomIntFromInterval(1,4)
+    }
+    var i_nd=this.game4array.indexOf(n_number)
+    this.game4array.splice(i_nd, 0, n_number);
+    this.result.unshift(n_number)
+   // alert(this.result)
+    var OO_number = this.randomIntFromInterval(1,4)
+    while(this.game4array[this.game4array.length-1]==OO_number){
+      OO_number = this.randomIntFromInterval(1,4)
+    } 
+    this.game4array.push(OO_number);
+    //  alert(this.result)
+
+  for(let k=0;k<this.game4array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game4array[k])
+    },k*2500)
   }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game4array.length*2700)
+}
+
+
+
+game_4()
+{
+  this.game6array=[1,2,3,4,5,6]
+  this.block9=false;
+  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
+  var _index = this.randomIntFromInterval(0,5)
+  var _number = this.game6array[_index]
+  this.game6array.splice(_index, 0, _number);
+  this.result.unshift(_number)
+    var O_number = this.randomIntFromInterval(1,6)
+    while(this.game6array[this.game6array.length-1]==O_number){
+      O_number = this.randomIntFromInterval(1,6)
+    } 
+    this.game6array.push(O_number);
+    
+    var n_number = this.randomIntFromInterval(1,6)
+
+    while(n_number==_number)
+    {
+      var n_number = this.randomIntFromInterval(1,6)
+    }
+    var i_nd=this.game6array.indexOf(n_number)
+
+    this.game6array.splice(i_nd, 0, n_number);
+    this.result.unshift(n_number)
+   // alert(this.result)
+
+
+
+     
+  // alert(this.game6array)
+
+  for(let k=0;k<this.game6array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game6array[k])
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game6array.length*2700)
+}
+
+
+
+game_5()
+{
+  this.game6array=[1,2,3,4,5,6]
+  this.block9=false;
+  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
+  var _index = this.randomIntFromInterval(0,5)
+  var _number = this.game6array[_index]
+  this.game6array.splice(_index, 0, _number);
+  this.result.unshift(_number)
+    var O_number = this.randomIntFromInterval(1,6)
+    while(this.game6array[this.game6array.length-1]==O_number){
+      O_number = this.randomIntFromInterval(1,6)
+    } 
+    this.game6array.push(O_number);
+    
+    var n_number = this.randomIntFromInterval(1,6)
+
+    while(n_number==_number)
+    {
+      var n_number = this.randomIntFromInterval(1,6)
+    }
+    var i_nd=this.game6array.indexOf(n_number)
+
+    this.game6array.splice(i_nd, 0, n_number);
+    var O5_number = this.randomIntFromInterval(1,6)
+    while(this.game6array[this.game6array.length-1]==O5_number){
+      O5_number = this.randomIntFromInterval(1,6)
+    } 
+    this.game6array.push(O5_number);
+
+    
+    this.result.unshift(n_number)
+
+
+    var n5_number = this.randomIntFromInterval(1,6)
+
+    while(n5_number==this.result[this.result.length-1])
+    {
+      var n5_number = this.randomIntFromInterval(1,6)
+    }
+    var i5_nd=this.game6array.indexOf(n5_number)
+    this.game6array.splice(i5_nd, 0, n5_number);
+    this.result.unshift(n5_number)
+    
+   // alert(this.result)
+
+
+
+     
+   alert(this.game6array)
+
+  for(let k=0;k<this.game6array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game6array[k])
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game6array.length*2700)
+}
+
+
+game_6()
+{
+  this.game6array=[1,2,3,4,5,6]
+  this.block9=false;
+  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
+  var _index = this.randomIntFromInterval(0,5)
+  var _number = this.game6array[_index]
+  this.game6array.splice(_index, 0, _number);
+  this.result.unshift(_number)
+    var O_number = this.randomIntFromInterval(1,6)
+    while(this.game6array[this.game6array.length-1]==O_number){
+      O_number = this.randomIntFromInterval(1,6)
+    } 
+    this.game6array.push(O_number);
+    
+    var n_number = this.randomIntFromInterval(1,6)
+
+    while(n_number==_number)
+    {
+      var n_number = this.randomIntFromInterval(1,6)
+    }
+    var i_nd=this.game6array.indexOf(n_number)
+
+    this.game6array.splice(i_nd, 0, n_number);
+    var O5_number = this.randomIntFromInterval(1,6)
+    while(this.game6array[this.game6array.length-1]==O5_number){
+      O5_number = this.randomIntFromInterval(1,6)
+    } 
+    this.game6array.push(O5_number);
+
+    
+    this.result.unshift(n_number)
+
+
+    var n5_number = this.randomIntFromInterval(1,6)
+
+    while(n5_number==this.result[this.result.length-1])
+    {
+      var n5_number = this.randomIntFromInterval(1,6)
+    }
+    var i5_nd=this.game6array.indexOf(n5_number)
+    this.game6array.splice(i5_nd, 0, n5_number);
+    
+    this.result.unshift(n5_number)
+    
+   // alert(this.result)
+
+
+   var n6_number = this.randomIntFromInterval(1,6)
+
+   while(n6_number==this.game6array[this.game6array.length-1])
+   {
+     var n6_number = this.randomIntFromInterval(1,6)
+   }
+   this.game6array.push(n6_number);
+   
+
+
+     
+   alert(this.game6array)
+
+  for(let k=0;k<this.game6array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game6array[k])
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game6array.length*2700)
+}
+
+
+
+
+blinkcase(k){
+  switch(k.toString())
+  {
+    case "1":
+      this.s11=true
+      break;
+    case "2":
+      this.s12=true
+      break;
+    case "3":
+      this.s13=true
+      break;
+    case "4":
+     this.s14=true
+      break;
+    case "5":
+    this.s15=true
+      break;
+    case "6":
+    this.s16=true
+    break;
+  }
+}
+
+
+blinknest(n,k){
+  switch(Number.parseInt(n.toString()))
+    {
+      case 0:
+      this.Sgame=1
+      this.blinkcase(k)
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+        },2000)
+        break;
+      
+      case 1:
+      this.Sgame=2
+      this.blinkcase(k)
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+        },2000)
+        break;
+      
+      case 2:
+      this.Sgame=3
+      this.blinkcase(k)
+       setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+        },2000)
+        break;
+      
+      case 3:
+        this.Sgame=4
+        this.blinkcase(k)
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+        },2000)
+        break;
+      
+      //break
+      case 4:
+      this.Sgame=5
+      
+      this.blinkcase(k)
+      setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      //break
+      case 5:
+      this.Sgame=6
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      case 6:
+      this.Sgame=7
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      case 7:
+      this.Sgame=8
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+     // break
+      case 8:
+      this.Sgame=9
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      //break
+      case 9:
+      this.Sgame=10
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      //break
+      case 10:
+      this.Sgame=11
+      this.blinkcase(k)
+      
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+       break;
+      
+     // break;
+      case 11:
+      this.Sgame=12
+      this.blinkcase(k)
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+      case 12:
+      this.Sgame=13
+      this.blinkcase(k)
+        setTimeout(()=>{
+          this.s11=false;
+          this.s12=false;
+          this.s13=false;
+          this.s14=false;
+          this.s15=false;
+          this.s16=false;
+
+        },2000)
+        break;
+      
+    }
+}
+
+
+
   level4(num) {
     this.level=num
     this.number=null;
     this.gamestart1=false;
   }
   startgame(){
+    this.check4=false;
     this.repeatshow=false
     this.first1 = true;
     this.first2 = true;
@@ -514,6 +770,8 @@ export class Game2Page {
     this.first6 = true;
     this.first7 = true;
     this.eightt = true;
+    this.nine = true;
+    this.zero = true;
     this.block9=false;
     this.minuted=0;
     this.minutecount='00';
@@ -529,51 +787,61 @@ export class Game2Page {
       this.attemptloose();
       this.gotohome()
     }else {
-      this.countdown();
-      this.mssatrt()
+      //this.countdown();
+      //this.mssatrt()
       this.result_numberr = ""
       switch (this.level) {
         case 1:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.agamestart()
+          this.game_(1)
           break;
         case 2:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart2()
+         this.game_(2)
           break;
         case 3:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart3()
+          this.game_3()
+          //this.gamestart3()
           break;
         case 4:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart4()
+          this.game_4()
+          //this.gamestart4()
           break;
         case 5:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart5()
+          this.game_5()
+         // this.gamestart5()
           break;
         case 6:
+          this.game4array=[1,2,3,4]
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart6()
+          this.game_5()
+         // this.gamestart6()
           break;
       }
     }
@@ -629,93 +897,45 @@ export class Game2Page {
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.agamestart()
+         // this.agamestart()
           break;
         case 2:
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart2()
+         // this.gamestart2()
           break;
         case 3:
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart3()
+         // this.gamestart3()
           break;
         case 4:
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart4()
-          break;
+         // this.gamestart4()
+          break;   
         case 5:
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart5()
+         // this.gamestart5()
           break;
         case 6:
           this.blockarray = []
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.gamestart6()
+         // this.gamestart6()
           break;
       }
     }
-  }
-  audioplay(number) {
-    switch(number)
-    {
-      case 0:
-      {
-        break;
-      }
-      case 1:
-      {
-        break;
-      }
-      case 2:
-      {
-        break;
-      }
-      case 3:
-      {
-        break;
-      }
-      case 4:
-      {
-        break;
-      }
-      case 5:
-      {
-        break;
-      }
-      case 6:
-      {
-        break;
-      }
-      case 7:
-      {
-        break;
-      }
-      case 8:
-      {
-        break;
-      }
-      case 9:
-      {
-        break;
-      }
-
-    }
-
-
   }
   calc(){
     var min= Number.parseInt(this.minShow)
@@ -750,38 +970,40 @@ export class Game2Page {
     this.attemptcpunt.push("1")
     var d = new Date()
     var month = d.getMonth()+1
-    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
+    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
     this.storage.set("game_history",JSON.stringify(this.d_result))
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
     this.res_result=this.result.join().toString();
-   // alert(this.res_result +"===="+blk)
+    // alert(this.res_result +"===="+blk)
     if(blk==this.res_result)
     {
+      this.block9=true
       this.testarray.push(1)
       this.result_numberr = ""
       this.checklist=[]
       this.result = []
+      this.check4=false;
+
       this.attempt = this.attempt + 1
       if(this.levelreturn==true){
         this.score = this.score + 1;
         this.attempt = this.attempt - 1
 
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
         this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
-          this.score = this.score + 2;
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
-            "Game Name": "Apple Colour Filling",
+            "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
             "Level": this.level,
             "result": "S",
@@ -789,18 +1011,10 @@ export class Game2Page {
           })
 
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
-
-          if(this.level==6){
-
-            let a = new Audio();
-            a.src = 'assets/audio/applause.mp3';
-            a.play();
-            this.gotogame_3()
-          }
         }
 
         else {
-          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
           this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
         }
@@ -853,8 +1067,9 @@ export class Game2Page {
     {
       this.checklist=[]
       this.result = []
-
-      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
+      this.check4=false;
+      this.block9=true;
+      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
 
       this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
@@ -901,8 +1116,6 @@ export class Game2Page {
       }
 
     }
-
-
     this.first1 = true;
     this.first2 = true;
     this.first3 = true;
@@ -911,8 +1124,6 @@ export class Game2Page {
     this.first6 = true;
     this.first7 = true;
     this.eightt = true;
-    //
-   // this.block9=true;
   }
   mssatrt() {
     this.zone.run(()=> {
@@ -1003,6 +1214,7 @@ export class Game2Page {
       },1)
     })
   }
+ 
   presentToast(lebal) {
     if(lebal<6) {
       let toast = this.toastCtrl.create({
@@ -1249,10 +1461,14 @@ export class Game2Page {
 
 
   }
-  gotohome() {this.navCtrl.setRoot(MaindashboardPage)}
 
-  gotogame_3(){
-    this.navCtrl.setRoot(Game3Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
-  }
 
+  gotohome() {
+    this.navCtrl.setRoot(MaindashboardPage)}
+
+
+
+  gotogame(){
+    this.navCtrl.setRoot(Game7Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
+   }
 }
