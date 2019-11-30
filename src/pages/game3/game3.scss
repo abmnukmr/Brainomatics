@@ -39,9 +39,9 @@ page-game3 {
       //position: fixed;
       background-image: url('../assets/imgs/open_cupboard.png');
       background-size: cover;
-      -webkit-animation-name: examplegam3; /* Safari 4.0 - 8.0 */
+      //-webkit-animation-name: examplegam3; /* Safari 4.0 - 8.0 */
       -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-      animation-name: examplegam3;
+      //animation-name: examplegam3;
       animation-duration: 4s;
     }
 
@@ -180,7 +180,7 @@ page-game3 {
       background-image: url('../assets/imgs/open_cupboard.png');
       -webkit-animation-name: example2game3; /* Safari 4.0 - 8.0 */
       -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-      animation-name: example2game3;
+      ///animation-name: example2game3;
       animation-duration: 4s;
     }
 
@@ -428,26 +428,26 @@ page-game3 {
     }
 
     .glow {
-      color: #fdf6fb;
-      text-align: center;
-      -webkit-animation: glow 0.8s ease-in-out infinite alternate;
-      -moz-animation: glow 0.8s ease-in-out infinite alternate;
-      animation: glow 0.8s ease-in-out infinite alternate;
+      // color: #fdf6fb;
+      // text-align: center;
+      // -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+      // -moz-animation: glow 0.8s ease-in-out infinite alternate;
+      // animation: glow 0.8s ease-in-out infinite alternate;
     }
 
     @-webkit-keyframes glow {
       10% {
-        text-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-        transform: translateY(0);
+      //  text-shadow: 0 0 10px #fffcaa, 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 40px #ff9e14, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+   //     transform: translateY(0);
       }
       50% {
-        text-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-        transform: translateY(-10px);
+  //      text-shadow: 0 0 15px #fdf60b, 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 50px #ff9e14, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+ //       transform: translateY(-10px);
       }
 
       100% {
-        text-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6;
-        transform: translateY(0);
+        //text-shadow: 0 0 20px #fdf60b, 0 0 25px #ff9e14, 0 0 30px #ff9e14, 0 0 60px #ff9e14, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6;
+      //  transform: translateY(0);
       }
     }
 

@@ -42,7 +42,7 @@ page-game2 {
       width: 120px;
       height: 120px;
      // margin: 10px;
-      position: fixed;
+      
       background-image: url('../assets/imgs/red_apple.png');
       background-size: contain;
       -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
@@ -212,7 +212,7 @@ page-game2 {
     .blink2game2{
       width: 100px;
       height: 100px;
-      position: fixed;
+
       background-image: url('../assets/imgs/red_apple.png');
       -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
       -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */

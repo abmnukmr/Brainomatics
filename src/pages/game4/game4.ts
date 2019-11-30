@@ -38,6 +38,8 @@ export class Game4Page {
   counter:number=0
   timz:any;
   seczo:any;
+
+  SetTimestuck:any;
   timeup:boolean=false;
   ms: any;
   checklist:any=[]
@@ -85,7 +87,7 @@ export class Game4Page {
   index_number:number;
   result_number:number;
   result_numberr:string=""
-  gamename:any="Egg Hatching";
+  gamename:any="Hatch me or not";
   game1:boolean=false;
   blockarray=[]
   numarray=[]
@@ -168,7 +170,7 @@ export class Game4Page {
   goto(n){
 
     setTimeout(()=> {
-
+      this.audioplay()
       var blk = Math.floor(Math.random() * 10)
       if (blk == 9 || blk == 0) {
         blk = 1
@@ -318,6 +320,7 @@ export class Game4Page {
     this.score=this.navParams.get("score");
   }
   agamestart() {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -341,6 +344,7 @@ export class Game4Page {
     }, 100)
   }
   gamestart2() {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -367,6 +371,7 @@ export class Game4Page {
     }, 100)
   }
   gamestart3() {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -383,8 +388,8 @@ export class Game4Page {
               this.repeatshow=true
               var ct = Math.random() + 0.5
               this.index_number = 2
-              var er = this.result[this.index_number]
               this.crack()
+              var er = this.result[this.index_number]
               this.result_number = er.number_res
               this.result_numberr=this.result_number.toString()
               this.presentToast1(this.result_numberr)
@@ -396,6 +401,7 @@ export class Game4Page {
    },100)
   }
   gamestart4() {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -428,6 +434,7 @@ export class Game4Page {
     }, 100)
   }
   gamestart5() {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -463,6 +470,7 @@ export class Game4Page {
     }, 100)
   }
   gamestart6 () {
+    clearTimeout(this.SetTimestuck)
     this.blockarray=[]
     this.numarray=[]
     this.Strnumber=""
@@ -726,10 +734,11 @@ export class Game4Page {
     this.repeatshow=false;
     clearInterval(this.timz)
     clearInterval(this.seczo)
+    clearInterval(this.internv)
     this.attemptcpunt.push("1")
     var d = new Date()
     var month = d.getMonth()+1
-    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Egg Hatching", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
+    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Hatch me or not", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
     this.storage.set("game_history",JSON.stringify(this.d_result))
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
@@ -744,18 +753,16 @@ export class Game4Page {
       if(this.levelreturn==true){
         this.score = this.score + 1;
         this.attempt = this.attempt - 1
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Egg Hatching","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Hatch me or not","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Egg Hatching","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+       
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
             "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
@@ -763,14 +770,34 @@ export class Game4Page {
             "result": "S",
             "Score": 4
           })
+          
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Hatch me or not","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
+
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame_3()
+          }
+          
         }
         else {
-          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Egg Hatching","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Hatch me or not","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
           this.storage.set("performance_history",JSON.stringify(this.resultarray))
         }
       }
       else {
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Hatch me or not","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
 
       }
 
@@ -818,7 +845,7 @@ export class Game4Page {
       this.checklist=[]
       this.result = []
 
-      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Egg Hatching","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
+      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Hatch me or not","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
 
       this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
@@ -942,7 +969,7 @@ export class Game4Page {
             if(this.minuted>=2){
               this.secondcount='00';
               clearInterval(timy)
-              this.timeloose()
+           //   this.timeloose()
             }
             else {
 
@@ -1091,6 +1118,7 @@ export class Game4Page {
     this.gotohome()
   }
   cross(n){
+    this.crackegg()
     switch(n)
     {
       case 1:{
@@ -1135,8 +1163,8 @@ export class Game4Page {
     switch(this.level)
     {
       case 1:{
-          
-          var i=5;
+        clearTimeout(this.SetTimestuck)
+          let i=5;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
@@ -1147,25 +1175,33 @@ export class Game4Page {
             {
             if(i==0)
             {
-             for(var p=0; p<this.result.length; p++)
+             for(let p=0; p<this.result.length; p++)
            {
             this.cross(this.result[p])
-            }
             
+            }
+             
              this.repeatshow=true;
              clearInterval(this.internv)
             }
           }
           i--
           },1000)
-          
+          this.SetTimestuck= setTimeout(()=>{
+            for(let p=0; p<this.result.length; p++)
+              {
+                this.cross(this.result[p])
+              }
+              this.presentToastcraclk()
+            },6000)
            
           break;
           }
           
           
       case 2:{
-          var i=5;
+        clearTimeout(this.SetTimestuck)
+          let i=5;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
@@ -1185,8 +1221,8 @@ export class Game4Page {
           },1000)
           
 
-        setTimeout(()=>{
-        for(var p=0; p<this.result.length; p++)
+          this.SetTimestuck= setTimeout(()=>{
+        for(let p=0; p<this.result.length; p++)
           {
             this.cross(this.result[p])
           }
@@ -1195,12 +1231,14 @@ export class Game4Page {
         break;
         }
       case 3:{
-          var i=10;
+        clearTimeout(this.SetTimestuck)
+          let i=10;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
             this.fort="00:00"
             clearInterval(this.internv)
+          ///  alert("asldjlak")
             }
             else
             {
@@ -1209,6 +1247,7 @@ export class Game4Page {
              this.presentToastcraclk()
              this.repeatshow=true;
              clearInterval(this.internv)
+           //  alert("asldjlak")
             }
           }
           i--
@@ -1216,9 +1255,9 @@ export class Game4Page {
           
 
 
-        setTimeout(()=>{
+        this.SetTimestuck=setTimeout(()=>{
         
-            for(var p=0; p<this.result.length; p++)
+            for(let p=0; p<this.result.length; p++)
             {
                 this.cross(this.result[p])
             }
@@ -1227,7 +1266,8 @@ export class Game4Page {
           break;
       }
       case 4:{
-          var i=10;
+        clearTimeout(this.SetTimestuck)
+          let i=10;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
@@ -1246,8 +1286,8 @@ export class Game4Page {
           i--
           },1000)
           
-        setTimeout(()=>{
-           for(var p=0; p<this.result.length; p++)
+          this.SetTimestuck=setTimeout(()=>{
+           for(let p=0; p<this.result.length; p++)
            {
                this.cross(this.result[p])
            }
@@ -1256,8 +1296,8 @@ export class Game4Page {
           break;
       }
       case 5:{
-
-          var i=15;
+        clearTimeout(this.SetTimestuck)
+          let i=15;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
@@ -1277,8 +1317,8 @@ export class Game4Page {
           },1000)
          
 
-        setTimeout(()=>{
-          for(var p=0; p<this.result.length; p++)
+          this.SetTimestuck= setTimeout(()=>{
+          for(let p=0; p<this.result.length; p++)
            {
             this.cross(this.result[p])
            }
@@ -1287,8 +1327,8 @@ export class Game4Page {
           break;
       }
       case 6:{
-        
-          var i=15;
+        clearTimeout(this.SetTimestuck)
+          let i=15;
           this.internv= setInterval(()=>{  
           this.fort=i+":00"
             if(this.checkswitch==true){
@@ -1302,13 +1342,14 @@ export class Game4Page {
              this.presentToastcraclk()
              this.repeatshow=true;
              clearInterval(this.internv)
+             
             }
           }
           i--
           },1000)
          
-        setTimeout(()=>{
-         for(var p=0; p<this.result.length; p++)
+          this.SetTimestuck=setTimeout(()=>{
+         for(let p=0; p<this.result.length; p++)
           {
             this.cross(this.result[p])
           }
@@ -1396,7 +1437,7 @@ export class Game4Page {
       if(this.ytime==59)
       {
         if(this.counter>119){
-          this.timeloose()
+         // this.timeloose()
           this.secShow='00'
           this.timeup=true;
           this.miliseconddd='00'
@@ -1421,6 +1462,23 @@ export class Game4Page {
 
 
   }
+
+
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/egg.mp3';
+    a.play()
+  }
+
+  crackegg() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/eggcrack.mp3';
+    a.play()
+  }
+
   gotohome() {this.navCtrl.setRoot(MaindashboardPage)}
   gotogame_3(){
     this.navCtrl.setRoot(Game5Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})

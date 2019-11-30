@@ -122,7 +122,7 @@ export class Game6Page {
   game6array=[1,2,3,4,5,6]
   secarray:any=['00','59','58','57','56','55', '54', '53','52','51','50','49','48','47','46','45','44','43','42','41','40','39','38','37','36','35','34','33','32','31','30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01']
   Games:any=
-    [{"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
+    [ {"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
       {"name":"Game 02","page":Game2Page,"icon":"ios-unlock","color":"primary"},
       {"name":"Game 03","page":Game3Page,"icon":"ios-unlock","color":"primary"},
       {"name":"Game 04","page":Game4Page,"icon":"ios-unlock","color":"primary"},
@@ -132,7 +132,6 @@ export class Game6Page {
       {"name":"Game 08","icon":"lock","color":"white"},
       {"name":"Game 09","icon":"lock","color":"white"},
       {"name":"Game 10","icon":"lock","color":"white"}
-
     ]
 
   Level:any=
@@ -235,7 +234,7 @@ export class Game6Page {
         
       }
       this.checklist.unshift(n)
-      //alert(this.checklist)
+      ///// alert(this.checklist)
       this.res_checklist = this.checklist.join()
       if (this.result.length == this.checklist.length) {
         setTimeout(()=>{
@@ -282,6 +281,7 @@ game_(n)
     for(let k=0;k<this.game4array.length;k++){
     setTimeout(()=>{
       this.blinknest(k,this.game4array[k])
+      this.audioplay()
     },k*2500)
   }
   setTimeout(()=>{
@@ -318,17 +318,18 @@ game_3()
     var i_nd=this.game4array.indexOf(n_number)
     this.game4array.splice(i_nd, 0, n_number);
     this.result.unshift(n_number)
-   // alert(this.result)
+   // /// alert(this.result)
     var OO_number = this.randomIntFromInterval(1,4)
     while(this.game4array[this.game4array.length-1]==OO_number){
       OO_number = this.randomIntFromInterval(1,4)
     } 
     this.game4array.push(OO_number);
-    //  alert(this.result)
+    //  /// alert(this.result)
 
   for(let k=0;k<this.game4array.length;k++){
     setTimeout(()=>{
       this.blinknest(k,this.game4array[k])
+      this.audioplay()
     },k*2500)
   }
   setTimeout(()=>{
@@ -366,16 +367,17 @@ game_4()
 
     this.game6array.splice(i_nd, 0, n_number);
     this.result.unshift(n_number)
-   // alert(this.result)
+   // /// alert(this.result)
 
 
 
      
-  // alert(this.game6array)
+  // /// alert(this.game6array)
 
   for(let k=0;k<this.game6array.length;k++){
     setTimeout(()=>{
       this.blinknest(k,this.game6array[k])
+      this.audioplay()
     },k*2500)
   }
   setTimeout(()=>{
@@ -432,16 +434,17 @@ game_5()
     this.game6array.splice(i5_nd, 0, n5_number);
     this.result.unshift(n5_number)
     
-   // alert(this.result)
+   // /// alert(this.result)
 
 
 
      
-   alert(this.game6array)
+   /// alert(this.game6array)
 
   for(let k=0;k<this.game6array.length;k++){
     setTimeout(()=>{
       this.blinknest(k,this.game6array[k])
+      this.audioplay()
     },k*2500)
   }
   setTimeout(()=>{
@@ -498,7 +501,7 @@ game_6()
     
     this.result.unshift(n5_number)
     
-   // alert(this.result)
+   // /// alert(this.result)
 
 
    var n6_number = this.randomIntFromInterval(1,6)
@@ -511,12 +514,15 @@ game_6()
    
 
 
+   
+
      
-   alert(this.game6array)
+   /// /// alert(this.game6array)
 
   for(let k=0;k<this.game6array.length;k++){
     setTimeout(()=>{
       this.blinknest(k,this.game6array[k])
+      this.audioplay()
     },k*2500)
   }
   setTimeout(()=>{
@@ -840,7 +846,7 @@ blinknest(n,k){
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.game_5()
+          this.game_6()
          // this.gamestart6()
           break;
       }
@@ -962,6 +968,29 @@ blinknest(n,k){
     }
     return res_min.toString()+":"+res_sec.toString()+":"+ this.miliseconddd
   }
+
+  
+
+   chekArraySimilar(array1, array2)
+   {
+     var checkStatus
+     var count=0
+     for(let i=0;i<array1.length;i++)
+        {
+            if(array1.indexOf(array2[i])!=-1){
+              count=count+1
+            }
+        } 
+        if(count==array1.length){
+          checkStatus=true
+        }  
+        else{
+          checkStatus=false
+        }
+
+        return checkStatus
+     
+   }
   check() {
     this.attemptcount=this.attemptcount+1
     this.repeatshow=false;
@@ -975,8 +1004,10 @@ blinknest(n,k){
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
     this.res_result=this.result.join().toString();
-    // alert(this.res_result +"===="+blk)
-    if(blk==this.res_result)
+    // /// alert(this.res_result +"===="+blk)
+    var res=this.result.reverse().join().toString();
+    
+    if(this.chekArraySimilar(this.result,this.checklist)==true)
     {
       this.block9=true
       this.testarray.push(1)
@@ -984,33 +1015,43 @@ blinknest(n,k){
       this.checklist=[]
       this.result = []
       this.check4=false;
-
       this.attempt = this.attempt + 1
+      
       if(this.levelreturn==true){
         this.score = this.score + 1;
         this.attempt = this.attempt - 1
-
         this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+      
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
-            "Game Name": "Digit Shelves",
-            "attempt": this.attemptcpunt.length,
+            "Game Name": "Peeping cuckoo joint",
+            "attempt": this.attemptcount,
             "Level": this.level,
             "result": "S",
             "Score": 4
           })
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
 
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame()
+          }
         }
 
         else {
@@ -1022,7 +1063,13 @@ blinknest(n,k){
       }
       else {
 
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Peeping cuckoo joint","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      
+
       }
+    }
 
       this.presentToast6()
       if (this.attempt%3==0 || this.levelreturn==true) {
@@ -1116,6 +1163,7 @@ blinknest(n,k){
       }
 
     }
+    
     this.first1 = true;
     this.first2 = true;
     this.first3 = true;
@@ -1125,6 +1173,7 @@ blinknest(n,k){
     this.first7 = true;
     this.eightt = true;
   }
+   
   mssatrt() {
     this.zone.run(()=> {
       this.seczo=setInterval(() => {
@@ -1154,6 +1203,17 @@ blinknest(n,k){
     })
 
   }
+
+   
+  audioplay() {
+    ///// alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/cuckoo6.mp3';
+    a.play()
+  }
+
+
+
   timerstart(){
     this.zone.run(()=>{
       var timy= setInterval(()=>
@@ -1193,7 +1253,7 @@ blinknest(n,k){
             if(this.minuted>=2){
               this.secondcount='00';
               clearInterval(timy)
-              this.timeloose()
+           //   this.timeloose()
             }
             else {
 
@@ -1311,53 +1371,13 @@ blinknest(n,k){
             console.log('Cancel clicked');
           }
         }]
-      /* {
-        text: 'Restart',
-        handler: () => {
-          if(this.level>1){
-            this.level=this.level-1;
-            setTimeout(() => {
 
-              this.minuted=0;
-              this.minutecount='00';
-              this.secondcount='00';
-              this.milisecond=0
-              this.miliseconddd='00';
-              this.sect=0;
-              this.milisecondd='0000';
-              this.sec=0;
-              this.attemptcpunt=[]
-              this.testarray=[]
-              this.startgame();
-            }, 1000)
-
-          }else {
-            setTimeout(() => {
-
-              this.minuted=0;
-              this.minutecount='00';
-              this.secondcount='00';
-              this.milisecond=0
-              this.miliseconddd='00';
-              this.sect=0;
-              this.milisecondd='0000';
-              this.sec=0;
-              this.attemptcpunt=[]
-              this.testarray=[]
-              this.startgame();
-            }, 1000)
-
-          }
-          //this.check2(num)
-          console.log('Buy clicked');
-        }
-      }
-    ]*/
     });
     alert.present();
     this.gotohome()
   }
-  timeloose(){clearInterval(this.timz)
+  timeloose(){
+    clearInterval(this.timz)
     clearInterval(this.seczo)
     let alert = this.alertCtrl.create({
       title: "Time's up",
@@ -1436,7 +1456,7 @@ blinknest(n,k){
         if(this.counter>119){
 
 
-          this.timeloose()
+          //this.timeloose()
           this.secShow='00'
           this.timeup=true;
           this.miliseconddd='00'

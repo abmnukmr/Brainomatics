@@ -195,7 +195,7 @@ export class Game7Page {
           console.log("loop start" + index + index2)
           var blk = Math.floor(Math.random() * 10)
           if (blk == 9 || blk == 0) {
-            blk = 1
+            blk = 2
           }
           this.block = Number.parseInt(blk.toString())
           var num = Math.random() * 10
@@ -340,6 +340,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString()
     this.artcheck=this.f_number+this.s_number
     this.crack()
+     this.audioplay()
     
   }
   gamestart2() {
@@ -354,6 +355,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString();
     this.artcheck=this.f_number+this.s_number;
     this.crack()
+    this.audioplay()
     
   }
   gamestart3() {
@@ -373,6 +375,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString();
     this.artcheck=this.f_number-this.s_number;
     this.crack();
+    this.audioplay()
     
   }
   gamestart4() {
@@ -392,6 +395,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString();
     this.artcheck=this.f_number-this.s_number;
     this.crack()
+    this.audioplay()
   }
   gamestart5() {
     this.blockarray=[]
@@ -405,6 +409,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString();
     this.artcheck=this.f_number*this.s_number;
     this.crack()
+    this.audioplay()
   }
   gamestart6() {
     this.blockarray=[]
@@ -418,6 +423,7 @@ export class Game7Page {
     this.ss_number=this.s_number.toString();
     this.artcheck=this.f_number*this.s_number;
     this.crack()
+    this.audioplay()
   }
   returnString(n){
        this.Num_b.push(n)
@@ -626,6 +632,17 @@ export class Game7Page {
     }
     return res_min.toString()+":"+res_sec.toString()+":"+ this.miliseconddd
   }
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/calculate.mp3';
+    a.play()
+  }
+
+
+
+
   check() {
     this.checkswitch=true;
     this.attemptcount=this.attemptcount+1
@@ -661,22 +678,36 @@ export class Game7Page {
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Calculate Me","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+       
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
-            "Game Name": "Digit Shelves",
-            "attempt": this.attemptcpunt.length,
+            "Game Name": "Calculate Me",
+            "attempt": this.attemptcpunt,
             "Level": this.level,
             "result": "S",
             "Score": 4
           })
+
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Calculate Me","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
+
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
+         
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame_2()
+          }
         }
         else {
           this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Calculate Me","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
@@ -685,6 +716,10 @@ export class Game7Page {
       }
       else {
 
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Calculate Me","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
       }
 
       this.presentToast6()

@@ -32,20 +32,20 @@ page-dashboard {
     background-repeat: no-repeat;
   }
 
-  .blinkgame1{
+  .blinkgame1dash{
     width: 100px;
     height: 100px;
     margin: 10px;
     position: fixed;
     background-image: url('../assets/imgs/open.png');
     background-size: cover;
-    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: exampledash; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-    animation-name: example;
+    animation-name: exampledash;
     animation-duration: 4s;
   }
 
-  @keyframes example {
+  @keyframes exampledash {
     0%   {//background-color:red;
       background-image: url('../assets/imgs/open.png');
       background-size: cover;
@@ -174,13 +174,13 @@ page-dashboard {
     margin: 10px;
     position: fixed;
     background-image: url('../assets/imgs/open.png');
-    -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: exampledash2; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-    animation-name: example2;
+    animation-name: exampledash2;
     animation-duration: 4s;
   }
 
-  @keyframes example2 {
+  @keyframes exampledash2 {
     0%   {//background-color:red;
 
 
@@ -309,7 +309,7 @@ page-dashboard {
 
   }
 
-  @-webkit-keyframes example2 {
+  @-webkit-keyframes exampledash2 {
 
     0%   {//background-color:red;
 

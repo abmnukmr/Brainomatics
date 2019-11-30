@@ -26,6 +26,7 @@ import { Game9Page } from '../game9/game9';
   templateUrl: 'game8.html',
 })
 export class Game8Page {
+  disable:boolean=true;
   res_result:any;
   res_checklist:any;
   counter:number=0
@@ -227,6 +228,7 @@ attemptcount:number=0;
       this.Strnumber = this.block.toString()
       // this.getcount=this.getcount
       this.result.push( this.block)
+      this.audioplay() 
       switch (colo) {
         case "1":
           this.first1 = false;
@@ -539,6 +541,7 @@ attemptcount:number=0;
     this.gamestart1=false;
   }
   startgame(){
+    this.disable=true
     this.repeatshow=false
     this.first1 = true;
     this.first2 = true;
@@ -575,6 +578,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.agamestart()
+          this.disable=false
           break;
         case 2:
           this.blockarray = []
@@ -582,6 +586,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.gamestart2()
+          this.disable=false
           break;
         case 3:
           this.blockarray = []
@@ -589,6 +594,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.gamestart3()
+          this.disable=false
           break;
         case 4:
           this.blockarray = []
@@ -596,6 +602,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.gamestart4()
+          this.disable=false
           break;
         case 5:
           this.blockarray = []
@@ -603,6 +610,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.gamestart5()
+          this.disable=false
           break;
         case 6:
           this.blockarray = []
@@ -610,6 +618,7 @@ attemptcount:number=0;
           this.Strnumber = ""
           this.result = []
           this.gamestart6()
+          this.disable=false
           break;
       }
     }
@@ -730,6 +739,16 @@ attemptcount:number=0;
     }
     return res_min.toString()+":"+res_sec.toString()+":"+ this.miliseconddd
   }
+
+
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/window.mp3';
+    a.play()
+  }
+
   check() {
     this.attemptcount=this.attemptcount+1
     this.repeatshow=false;
@@ -759,14 +778,12 @@ attemptcount:number=0;
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Flashing windows","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+       
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
             "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
@@ -774,8 +791,23 @@ attemptcount:number=0;
             "result": "S",
             "Score": 4
           })
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Flashing windows","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
+
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
+         
 
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame_2()
+          }
         }
 
         else {
@@ -786,6 +818,10 @@ attemptcount:number=0;
 
       }
       else {
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Flashing windows","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
 
       }
 

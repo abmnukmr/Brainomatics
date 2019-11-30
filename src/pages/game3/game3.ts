@@ -192,6 +192,7 @@ export class Game3Page {
       this.Strnumber = this.number.toString()
       // this.getcount=this.getcount
       this.result.push( this.block)
+      this.audioplay()
       switch (colo) {
         case "1":
           this.first1 = false;
@@ -713,14 +714,12 @@ export class Game3Page {
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+       
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
             "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
@@ -728,8 +727,22 @@ export class Game3Page {
             "result": "S",
             "Score": 4
           })
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
 
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
+       
+          this.storage.set("performance_history", JSON.stringify(this.resultarray))
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame_3()
+          }
         }
 
         else {
@@ -740,6 +753,10 @@ export class Game3Page {
 
       }
       else {
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Knock the Cupboard","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
 
       }
 
@@ -1177,6 +1194,13 @@ export class Game3Page {
 
 
 
+  }
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/drawer.mp3';
+    a.play()
   }
   gotohome() {this.navCtrl.setRoot(MaindashboardPage)}
   gotogame_3(){

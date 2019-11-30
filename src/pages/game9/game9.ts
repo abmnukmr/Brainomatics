@@ -13,6 +13,7 @@ import { Game7Page } from '../game7/game7';
 import { Game6Page } from '../game6/game6';
 import { Game5Page } from '../game5/game5';
 import { Game8Page } from '../game8/game8';
+import { Game10Page } from '../game10/game10';
 /**
  * Generated class for the Game9Page page.
  *
@@ -116,8 +117,8 @@ export class Game9Page {
      {"name":"Game 05","page":Game5Page,"icon":"ios-unlock","color":"primary"},
      {"name":"Game 06","page":Game6Page,"icon":"ios-unlock","color":"primary"},
      {"name":"Game 07","page":Game7Page,"icon":"ios-unlock","color":"primary"},
-     {"name":"Game 07","page":Game8Page,"icon":"ios-unlock","color":"primary"},
-     {"name":"Game 08","page":Game9Page,"icon":"ios-unlock","color":"secondary"},
+     {"name":"Game 08","page":Game8Page,"icon":"ios-unlock","color":"primary"},
+     {"name":"Game 09","page":Game9Page,"icon":"ios-unlock","color":"secondary"},
      {"name":"Game 10","icon":"lock","color":"white"}
      ]
 
@@ -244,6 +245,7 @@ export class Game9Page {
       this.Strnumber = this.block.toString()
       // this.getcount=this.getcount
       this.result.push( this.block)
+      this.audioplay() 
       switch (colo) {
         case "1":
           this.first1 = false;
@@ -755,6 +757,14 @@ export class Game9Page {
       }
     }
   }
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/flash.mp3';
+    a.play()
+  }
+
   calc(){
     var min= Number.parseInt(this.minShow)
     var sec= Number.parseInt(this.secShow)
@@ -809,14 +819,11 @@ export class Game9Page {
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Lights On","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
       if(this.level==5||this.level==6) {
         if (this.attempt%3==0) {
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
             "Game Name": "Digit Shelves",
             "attempt": this.attemptcpunt.length,
@@ -824,8 +831,22 @@ export class Game9Page {
             "result": "S",
             "Score": 4
           })
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Light On","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
 
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
+         
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+
+          if (this.level == 6 && this.attempt % 6 == 0) {
+
+
+            let a = new Audio();
+            a.src = 'assets/audio/applause.mp3';
+            a.play();
+            this.gotogame_2()
+          }
         }
 
         else {
@@ -836,7 +857,11 @@ export class Game9Page {
 
       }
       else {
-
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Lights On","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
+     
       }
 
       this.presentToast6()
@@ -1284,7 +1309,7 @@ export class Game9Page {
   gotohome() {
   this.navCtrl.setRoot(MaindashboardPage)}
   gotogame_2(){
-   this.navCtrl.setRoot(Game6Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
+   this.navCtrl.setRoot(Game10Page,{"result":this.resultarray,"score":this.score,"Login ID":this.navParams.get("Login ID")})
   }
 
 

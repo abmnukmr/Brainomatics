@@ -1,18 +1,1043 @@
-<!--
-  Generated template for the Game10Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>game10</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="cont">
+
+  <div class="bg" >
+
+    <div style="text-align: center;color: #fcd011">
+      <h1 style="text-align: center;color: #fcd011">{{gamename}}</h1>
+      <button ion-button clear icon-only (click)="gotohome()">
+        <ion-icon name="home" color="light"></ion-icon>
+      </button>
+    </div>
+
+
+
+    <div style="width: 100%;">
+      <ion-row>
+
+        <ion-col col-3>
+          <h6 style="text-align: center;color: #fbfc7a">Countdown Time: {{minShow}}:{{secShow}}:{{miliseconddd}}{{result}}</h6>
+        </ion-col>
+
+        <ion-col col-3>
+          <h6 style="text-align: center;color: #fcd011">Game4/Level{{level}}/Attempt:{{attemptcount}}/{{attempt}}</h6>
+        </ion-col>
+
+        <ion-col col-3>
+          <h6 style="text-align: center;color: #fcd011">Game: {{gamename}}</h6>
+        </ion-col>
+
+        <ion-col col-3>
+          <h6  style="text-align: center;color: #fcd011">Score:{{score}}</h6>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+
+
+
+
+    <div style="width: 100%;margin-top:0%;text-align: center">
+      <ion-row>
+        <ion-col col-2>
+
+          <button ion-button icon-right color={{game.color}} *ngFor="let game of Games; let i=index" [disabled]="game.name=='Game 10'?false:true"  (click)="gotogame()">{{game.name}}
+            <ion-icon name="{{game.icon}}" [hidden]="i==10?true:false"></ion-icon>
+          </button><br>
+
+
+        </ion-col>
+
+        <ion-col col-8>
+
+
+          <div [hidden]="game1" style="margin-left: -9%;">
+
+            <!-- 6 block -->
+            <div [hidden]="level>=4?false:true" >
+              <ion-row style="text-align: center;margin-left:8%; margin-top:2%;" [hidden]="!start">
+              
+              <ion-col col-3 *ngIf="block1" #block1 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img src="assets/imgs/nest.png" [hidden]="Sgame==1&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==1&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==1&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==1&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==1&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==1&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              
+              <ion-col col-3 *ngIf="block2" #block2 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img src="assets/imgs/nest.png" [hidden]="Sgame==2&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==2&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==2&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==2&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==2&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==2&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+
+              <ion-col col-3 *ngIf="block3" #block3 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==3&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+
+              <ion-col col-3 *ngIf="block4" #block4 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==4&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              </ion-row>
+
+              <div style="text-align: center;margin-top: 20%" [hidden]="start" >
+               <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
+              </div>
+
+
+              <ion-row style="text-align: center;margin-left:8%;margin-top: 2%" [hidden]="!start">
+
+              <ion-col col-3 *ngIf="block5" #block5 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==5&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              
+              <ion-col col-3 *ngIf="block6" #block6 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==6&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              
+              <ion-col col-3 *ngIf="block7" #block7 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==7&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div>  
+              </ion-col>
+
+              <ion-col col-3 *ngIf="block8" #block8 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==8&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+            
+              </ion-row>
+            
+            
+            <ion-row style="text-align: center;margin-left:8%;margin-top: 2%" [hidden]="!start">
+              <ion-col col-3    [hidden]="level>=4?false:true" >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==9&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              
+              <ion-col col-3 *ngIf="block10" [hidden]="level>=5?false:true" #block10 >
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==10&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+              
+              <ion-col col-3 *ngIf="block11"  [hidden]="level>=5?false:true" #block11>
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==11&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+
+              <ion-col col-3 *ngIf="block12" [hidden]="level>=6?false:true" #block12>
+                <div style="display:inline-block;border: 1px solid #fff">
+                  <ion-row>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s11==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s12==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="margin-top:-16%;">
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s13==true?false:true">
+                        </div>
+                      </ion-col>
+                      <ion-col col-6>
+                        <div class="stat" style="width:30px;height:30px;border-bottom:1px solid white;margin-left: -35%">
+                          <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s14==true?false:true">
+                        </div>  
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 style="margin-top:-7%">
+                      <div  class="stat" style="width:30px;height:30px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s15==true?false:true">
+                      </div>
+                    </ion-col>
+                    <ion-col col-6>
+                      <div class="stat" style="width:30px;height:30px;margin-left: -35%;margin-top: -25%">
+                        <img  src="assets/imgs/nest.png" [hidden]="Sgame==12&&s16==true?false:true">
+                      </div>  
+                    </ion-col>
+                  </ion-row>
+                </div> 
+              </ion-col>
+            </ion-row>
+                
+
+            <div style="text-align: center" *ngIf="block9">
+              <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 5%" ion-button (click)="startgame()">I'm ready</button>
+            </div>
+              
+              <div style="text-align: center">
+                <button ion-button round color="secondary"  *ngIf="repeatshow">Select cell which blinck twice. </button>
+              </div>
+              <ion-row style="text-align: center;margin-left:8%;margin-top:2%" >
+  
+              <ion-col col-4 >
+  
+  
+               </ion-col>
+  
+                <ion-col col-4 style="text-align: center" >
+  
+  
+  
+                  <div style="width: 72%;text-align: center">
+  
+                    <button ion-button round color="white" (click)="startgame()" *ngIf="repeatshow">Repeat</button>
+                  </div>
+  
+  
+                </ion-col>
+  
+  
+                <ion-col col-4 >
+  
+                </ion-col>
+  
+              </ion-row>
+
+              
+            </div>
+
+            <!-- 4 block -->
+            <div [hidden]="level>=4?true:false">
+               <ion-row style="text-align: center;margin-left:8%; margin-top:2%;" [hidden]="!start">
+    
+                  <ion-col col-3 *ngIf="block1" #block1 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                           <img src="assets/imgs/nest.png" [hidden]="Sgame==1&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==1&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==1&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==1&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                    </div> 
+                  </ion-col>
+    
+                  <ion-col col-3 *ngIf="block2" #block2 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                        <ion-row>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==2&&s11==true?false:true">
+                            </div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==2&&s12==true?false:true">
+                            </div>  
+                          </ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col col-6>
+                            <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==2&&s13==true?false:true">
+                            </div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==2&&s14==true?false:true">
+                            </div>  
+                          </ion-col>
+                        </ion-row>
+                    </div> 
+                  </ion-col>
+    
+    
+                  <ion-col col-3 *ngIf="block3" #block3 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                        <ion-row>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==3&&s11==true?false:true">
+                            </div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==3&&s12==true?false:true">
+                            </div>  
+                          </ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col col-6>
+                            <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==3&&s13==true?false:true">
+                            </div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                              <img src="assets/imgs/nest.png" [hidden]="Sgame==3&&s14==true?false:true">
+                            </div>  
+                          </ion-col>
+                        </ion-row>
+                    </div> 
+                  </ion-col>
+    
+                  <ion-col col-3 *ngIf="block4" #block4 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==4&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==4&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==4&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==4&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>  
+                    </div> 
+                  </ion-col>
+    
+               </ion-row>
+    
+               <div style="text-align: center;margin-top: 20%" [hidden]="start" >
+                  <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
+               </div>
+               
+               <ion-row style="text-align: center;margin-left:8%;margin-top: 2%" [hidden]="!start">
+    
+                  <ion-col col-3 *ngIf="block5"  #block5  >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==5&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==5&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==5&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==5&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>  
+                    </div>  
+                  </ion-col>
+    
+                  <ion-col col-3 *ngIf="block6"  [hidden]="level>=2?false:true" #block6 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==6&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==6&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==6&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==6&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>    
+                    </div> 
+                  </ion-col>
+                  
+                  <ion-col col-3 *ngIf="block7" [hidden]="level>=3?false:true" #block7 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==7&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==7&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==7&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==7&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>  
+                    </div> 
+    
+                  </ion-col>
+    
+                  <ion-col col-3   [hidden]="level>=3?false:true" #block8 >
+                    <div style="display:inline-block;border: 1px solid #fff">
+                      <ion-row>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;border-bottom:1px solid white">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==8&&s11==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;border-bottom:1px solid white;margin-left: -20%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==8&&s12==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-6>
+                          <div  class="stat" style="width:50px;height:50px;display:inline-block;border-right:1px solid white;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==8&&s13==true?false:true">
+                          </div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                            <img src="assets/imgs/nest.png" [hidden]="Sgame==8&&s14==true?false:true">
+                          </div>  
+                        </ion-col>
+                      </ion-row>  
+                    </div> 
+                  </ion-col>
+    
+               </ion-row>
+               
+               
+               <div style="text-align: center" *ngIf="block9">
+                  <button style="width: 200px;height: 50px;border-radius: 30px;background: #fcd011; margin-left: 5%" ion-button (click)="startgame()">I'm ready</button>
+               </div>
+                
+               <div style="text-align: center">
+                  <button ion-button round color="secondary"  *ngIf="repeatshow">Select cell which blinck twice. </button>
+               </div>
+                
+               <ion-row style="text-align: center;margin-left:8%;margin-top:2%" >
+    
+                <ion-col col-4 >
+    
+    
+                 </ion-col>
+    
+                  <ion-col col-4 style="text-align: center" >
+    
+    
+    
+                    <div style="width: 72%;text-align: center">
+    
+                      <button ion-button round color="white" (click)="startgame()" *ngIf="repeatshow">Repeat</button>
+                    </div>
+    
+    
+                  </ion-col>
+    
+    
+                  <ion-col col-4 >
+    
+                  </ion-col>
+    
+               </ion-row>
+    
+            </div>
+         </div>
+
+
+
+        </ion-col>
+
+
+        <ion-col col-2>
+          <button ion-button icon-right [color]="level<1?'white':'primary'" [disabled]="level<1?true:false">LEVEL 01
+            <ion-icon name="lock" [hidden]="level<1?false:true" [color]="level==1?'white':'primary'"></ion-icon>
+          </button> <br>
+
+          <button ion-button icon-right  [color]="level<2?'white':'primary'"  [disabled]="level<2?true:false">LEVEL 02
+            <ion-icon name="lock" [hidden]="level<2?false:true"></ion-icon>
+          </button> <br>
+
+          <button ion-button icon-right  [color]="level<3?'white':'primary'" [disabled]="level<3?true:false">LEVEL 03
+            <ion-icon name="lock" [hidden]="level<3?false:true"></ion-icon>
+          </button> <br>
+
+          <button ion-button icon-right  [color]="level<4?'white':'primary'" [disabled]="level<4?true:false">LEVEL 04
+            <ion-icon name="lock" [hidden]="level<4?false:true"></ion-icon>
+          </button> <br>
+
+          <button ion-button icon-right   [color]="level<5?'white':'primary'" [disabled]="level<5?true:false">LEVEL 05
+            <ion-icon name="lock" [hidden]="level<5?false:true"></ion-icon>
+          </button> <br>
+
+          <button ion-button icon-right  [color]="level< 6?'white':'primary'" [disabled]="level<6?true:false">LEVEL 06
+            <ion-icon name="lock" [hidden]="level<6?false:true"></ion-icon>
+          </button> <br>
+
+          <div style="text-align:center;" [hidden]='level>=4?true:false' *ngIf="check4">
+            <div style="display:inline-block;border: 2px solid rgb(250, 214, 7)">
+              <ion-row>
+                <ion-col col-6>
+                  <div (click)="checkresult(1)" class="stat" style="width:50px;height:50px;display:inline-block;border-right:2px solid rgb(250, 214, 7);border-bottom:2px solid rgb(250, 214, 7)">
+                    <img src="assets/imgs/nest.png" [hidden]="first1">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first1" >1</h1>
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                  <div  (click)="checkresult(2)" class="stat" style="width:50px;height:50px;border-bottom:2px solid rgb(250, 214, 7);margin-left: -20%">
+                    <img src="assets/imgs/nest.png" [hidden]="first2">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%; " [hidden]="!first2" >2</h1>
+                
+                  </div>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <div  (click)="checkresult(3)" class="stat" style="width:50px;height:50px;display:inline-block;border-right:2px solid rgb(250, 214, 7);margin-top: -25%">
+                    <img src="assets/imgs/nest.png" [hidden]="first3">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first3" >3</h1>
+                
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                  <div (click)="checkresult(4)" class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                    <img src="assets/imgs/nest.png" [hidden]="first4">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first4" >4</h1>
+                
+                 
+                  </div>  
+                </ion-col>
+              </ion-row>  
+            </div> 
+           </div>
+           
+          <div style="text-align:center;" [hidden]='level>=4?false:true' *ngIf="check4">
+            <div style="display:inline-block;border: 2px solid rgb(250, 214, 7)">
+              <ion-row>
+                <ion-col col-6>
+                  <div (click)="checkresult(1)" class="stat" style="width:50px;height:50px;display:inline-block;border-right:2px solid rgb(250, 214, 7);border-bottom:2px solid rgb(250, 214, 7)">
+                    <img src="assets/imgs/nest.png" [hidden]="first1">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first1" >1</h1>
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                  <div  (click)="checkresult(2)" class="stat" style="width:50px;height:50px;border-bottom:2px solid rgb(250, 214, 7);margin-left: -20%">
+                    <img src="assets/imgs/nest.png" [hidden]="first2">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first2" >2</h1>
+                  </div>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <div  (click)="checkresult(3)" class="stat" style="width:50px;height:50px;display:inline-block;border-bottom:2px solid rgb(250, 214, 7);border-right:2px solid rgb(250, 214, 7);margin-top: -25%">
+                    <img src="assets/imgs/nest.png" [hidden]="first3">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first3" >3</h1>
+                  
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                  <div (click)="checkresult(4)" class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%;border-bottom:2px solid rgb(250, 214, 7);">
+                    <img src="assets/imgs/nest.png" [hidden]="first4">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first4" >4</h1>
+                 
+                  </div>  
+                </ion-col>
+              </ion-row>  
+              <ion-row>
+                <ion-col col-6>
+                  <div  (click)="checkresult(5)" class="stat" style="width:50px;height:50px;display:inline-block;border-right:2px solid rgb(250, 214, 7);margin-top: -25%">
+                    <img src="assets/imgs/nest.png" [hidden]="first5">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first5" >5</h1>
+                  
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                  <div (click)="checkresult(6)" class="stat" style="width:50px;height:50px;margin-left: -20%;margin-top: -25%">
+                    <img src="assets/imgs/nest.png" [hidden]="first6">
+                    <h1 style="color:aliceblue;position: absolute;text-align:center;margin: 20%;" [hidden]="!first6" >6</h1>
+                  </div>  
+                </ion-col>
+              </ion-row>
+            </div> 
+           </div>
+
+        </ion-col>
+
+
+      </ion-row>
+
+    </div>
+
+    <ion-footer >
+
+      <ion-row>
+
+        <ion-col col-3>
+
+        </ion-col>
+
+        <ion-col col-3>
+
+          <h1 style="text-align: center;color: white">Game1/Level{{level}}</h1>
+
+        </ion-col>
+
+        <ion-col col-3>
+
+          <h1 style="text-align: center;color: white"> {{gamename}}</h1>
+
+        </ion-col>
+
+        <ion-col col-3>
+        </ion-col>
+      </ion-row>
+
+    </ion-footer>
+
+  </div >
 
 </ion-content>
+

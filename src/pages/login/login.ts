@@ -19,7 +19,20 @@ import {MaindashboardPage} from "../maindashboard/maindashboard";
 export class LoginPage {
   user=[{"id":"user","password":"User123"},
     {"id":"admin","password":"Admin123"},
-    {"id":"guest","password":"Guest123"}
+    {"id":"guest","password":"Guest123"},
+    {"id":"student1","password":"Student1_123"},
+    {"id":"student2","password":"Student2_123"},
+    {"id":"student3","password":"Student3_123"},
+    {"id":"student4","password":"Student4_123"},
+    {"id":"student5","password":"Student5_123"},
+    {"id":"student6","password":"Student6_123"},
+    {"id":"student7","password":"Student7_123"},
+    {"id":"student9","password":"Student9_123"},
+    {"id":"student10","password":"Student10_123"},
+    {"id":"student8","password":"Student8_123"}
+
+
+
   ]
   text="password";
   userid="";

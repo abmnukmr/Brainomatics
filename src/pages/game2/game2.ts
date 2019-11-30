@@ -73,7 +73,7 @@ export class Game2Page {
   index_number:number;
   result_number:number;
   result_numberr:string=""
-  gamename:any="Apple Colour Filling";
+  gamename:any="Adam's apple";
   game1:boolean=false;
   blockarray=[]
   numarray=[]
@@ -137,12 +137,12 @@ export class Game2Page {
   }
   gotolevel1(){
     this.game1=false;
-    this.gamename="Apple Colour Filling"
+    this.gamename="Adam's apple"
   }
   goto(n){
 
     setTimeout(()=> {
-
+      this.audioplay()
       var blk = Math.floor(Math.random() * n) + 1
       if (blk == 9 || blk == 0) {
         blk = 1
@@ -179,7 +179,7 @@ export class Game2Page {
 
       }
       console.log("After loop")
-      this.audioplay(this.number)
+      this.audioplay()
       var colo = this.block.toString();
       this.blockarray.push(this.block)
       this.numarray.push(this.number)
@@ -669,54 +669,7 @@ export class Game2Page {
       }
     }
   }
-  audioplay(number) {
-    switch(number)
-    {
-      case 0:
-      {
-        break;
-      }
-      case 1:
-      {
-        break;
-      }
-      case 2:
-      {
-        break;
-      }
-      case 3:
-      {
-        break;
-      }
-      case 4:
-      {
-        break;
-      }
-      case 5:
-      {
-        break;
-      }
-      case 6:
-      {
-        break;
-      }
-      case 7:
-      {
-        break;
-      }
-      case 8:
-      {
-        break;
-      }
-      case 9:
-      {
-        break;
-      }
-
-    }
-
-
-  }
+  
   calc(){
     var min= Number.parseInt(this.minShow)
     var sec= Number.parseInt(this.secShow)
@@ -750,7 +703,7 @@ export class Game2Page {
     this.attemptcpunt.push("1")
     var d = new Date()
     var month = d.getMonth()+1
-    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
+    this.d_result.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Adam's apple", "Level":this.level,"Attempt":this.attemptcpunt.length,"Score":this.score,"TimeTaken":this.secShow})
     this.storage.set("game_history",JSON.stringify(this.d_result))
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
@@ -767,30 +720,34 @@ export class Game2Page {
         this.score = this.score + 1;
         this.attempt = this.attempt - 1
 
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Adam's apple","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":1})
         this.storage.set("performance_history",JSON.stringify(this.resultarray))
       }
       else {
-        this.score = this.score + 2;
-        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
-        this.storage.set("performance_history",JSON.stringify(this.resultarray))
-      }
+       
       if(this.level==5||this.level==6) {
+        this.score = this.score + 2;
         if (this.attempt%3==0) {
           this.score = this.score + 2;
           this.resultarray.push({
             "Login ID": this.navParams.get("Login ID"),
+            "time":this.calc(),
             "Date": d.getDate() + "-" + month + "-" + d.getFullYear(),
-            "Game Name": "Apple Colour Filling",
+            "Game Name": "Adam's apple",
             "attempt": this.attemptcpunt.length,
             "Level": this.level,
             "result": "S",
             "Score": 4
           })
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Adam's apple","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":4})
 
           this.storage.set("performance_history", JSON.stringify(this.resultarray))
+          this.block99 = true;
+          this.Bonus()
+          this.attemptcount=this.attemptcount+1
+          
+          if (this.level == 6 && this.attempt % 6== 0) {
 
-          if(this.level==6){
 
             let a = new Audio();
             a.src = 'assets/audio/applause.mp3';
@@ -800,13 +757,17 @@ export class Game2Page {
         }
 
         else {
-          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+          this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month +"-"+d.getFullYear(),"Game Name":"Adam's apple","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
           this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
         }
 
       }
       else {
+        this.score = this.score + 2;
+        this.resultarray.push({"Login ID":this.navParams.get("Login ID"),"time":this.calc(), "Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Adam's apple","attempt":this.attemptcount,"Level":this.level,"result":"S","Score":2})
+        this.storage.set("performance_history",JSON.stringify(this.resultarray))
+      }
 
       }
 
@@ -854,7 +815,7 @@ export class Game2Page {
       this.checklist=[]
       this.result = []
 
-      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Apple Colour Filling","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
+      this.resultarray.push({"Login ID":this.navParams.get("Login ID"), "time":this.calc(),"Date":d.getDate()+"-"+month+"-"+d.getFullYear(),"Game Name":"Adam's apple","attempt":this.attemptcount,"Level":this.level,"result":"F","Score":0})
 
       this.storage.set("performance_history",JSON.stringify(this.resultarray))
 
@@ -1248,6 +1209,14 @@ export class Game2Page {
 
 
 
+
+  }
+
+  audioplay() {
+    //alert("Play")
+    let a = new Audio();
+    a.src = 'assets/audio/apple.mp3';
+    a.play()
   }
   gotohome() {this.navCtrl.setRoot(MaindashboardPage)}
 

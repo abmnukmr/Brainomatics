@@ -51,49 +51,51 @@
         <ion-col col-8>
   
   
-          <div [hidden]="game1">
+          <div [hidden]="game1" [ngClass]="start==true?'phone':'phonen'">
+
+            <div  style="margin-left:12%;text-align: left;">
   
-          <ion-row style="text-align: center;margin-left:28%; margin-top:0%;" [hidden]="!start">
+          <ion-row style="text-align: center;margin-left:32%; padding-top:15%;" [hidden]="!start">
   
-            <ion-col col-3 *ngIf="block1" #block1  style="background:#fbfc7a;flex:0 0 18%;padding-top: 2%">
+            <ion-col col-3 *ngIf="block1" #block1  style="background:#fbfc7a;flex: 0 0 14%;padding-top: 2%;border-radius:40px; ">
   
   
               <div  class="blinkgame1" *ngIf="!first1" #first1>
   
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
                   
               </div>
   
-              <div (click)="checkresult(1)"  *ngIf="first1"  class="stat"  style="height: 80px;width: 80px;margin:0px" #first>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">1</h1>
+              <div (click)="checkresult(1)"  *ngIf="first1"  class="stat"  style="height: 50px;width: 50px;margin:0px" #first>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">1</h1>
   
               </div>
             </ion-col>
   
-            <ion-col col-3 *ngIf="block2" #block2  style="background:#fbfc7a;flex:0 0 18%;padding-top: 2%">
+            <ion-col col-3 *ngIf="block2" #block2  style="background:#fbfc7a;flex: 0 0 14%;padding-top: 2%;border-radius:40px;">
   
               <div  class="blinkgame1" *ngIf="!first2" #second2>
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
   
               </div>
   
-              <div  (click)="checkresult(2)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first2" #second>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">2</h1>
+              <div  (click)="checkresult(2)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="first2" #second>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">2</h1>
   
               </div>
             </ion-col>
   
   
-            <ion-col col-3 *ngIf="block3" #block3 style="background:#fbfc7a;flex:0 0 18%;padding-top: 2%" >
+            <ion-col col-3 *ngIf="block3" #block3 style="background:#fbfc7a;flex: 0 0 14%;padding-top: 2%;border-radius:40px;" >
   
               <div  class="blinkgame1" *ngIf="!first3" #three3>
   
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
                   
               </div>
   
-              <div  (click)="checkresult(3)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first3" #three>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">3</h1>
+              <div  (click)="checkresult(3)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="first3" #three>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">3</h1>
   
               </div>
             </ion-col>
@@ -101,37 +103,37 @@
           </ion-row>
   
             <div style="text-align: center;margin-top: 18%" [hidden]="start" >
-              <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 60px;padding-top: 60px">Begin</p> </div>
+              <div style="width: 200px;height: 200px;border-radius: 100px;background: #fcd011; margin-left: 39%"  tappable (click)="onload()"><p style="color: white;font-size: 50px;padding-top: 50px">Begin</p> </div>
             </div>
   
   
-          <ion-row style="text-align: center;margin-left:28%;margin-top:0%" [hidden]="!start">
+          <ion-row style="text-align: center;margin-left:32%;margin-top:0%" [hidden]="!start">
 
 
-            <ion-col col-3 *ngIf="block4" #block4  style="background:#fbfc7a;flex:0 0 18%;"  >
+            <ion-col col-3 *ngIf="block4" #block4  style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;border-radius:40px;border-radius:40px;"  >
               <div  class="blinkgame1" *ngIf="!first4" #four4>
   
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
                   
               </div>
   
-              <div  class="stat" (click)="checkresult(4)"  style="height: 80px;width: 80px;margin:0px" *ngIf="first4" #four>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">4</h1>
+              <div  class="stat" (click)="checkresult(4)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first4" #four>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">4</h1>
   
               </div>
             </ion-col>
   
-            <ion-col col-3 *ngIf="block5" #block5 style="background:#fbfc7a;flex:0 0 18%;"  >
+            <ion-col col-3 *ngIf="block5" #block5 style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;"  >
   
   
               <div  class="blinkgame1" *ngIf="!first5" #five5>
   
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
                   
               </div>
   
-              <div  (click)="checkresult(5)"   class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="first5" #five>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">5</h1>
+              <div  (click)="checkresult(5)"   class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="first5" #five>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">5</h1>
   
               </div>
   
@@ -139,17 +141,17 @@
   
   
   
-            <ion-col col-3 *ngIf="block6" #block6 style="background:#fbfc7a;flex:0 0 18%;" >
+            <ion-col col-3 *ngIf="block6" #block6 style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;" >
   
   
               <div  class="blinkgame1" *ngIf="!first6" #six6>
   
-                <h1 class="glow" style="font-size:60px;margin-top:0%;padding-top: 20px">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;margin-top:0%;padding-top: 20px">{{Strnumber}}</h1>
   
               </div>
   
-              <div  class="stat" (click)="checkresult(6)"  style="height: 80px;width: 80px;margin:0px" *ngIf="first6" #six>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">6</h1>
+              <div  class="stat" (click)="checkresult(6)"  style="height: 50px;width: 50px;margin:0px" *ngIf="first6" #six>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">6</h1>
   
               </div>
   
@@ -158,42 +160,42 @@
   
           </ion-row>
 
-          <ion-row style="text-align: center;margin-left:28%;margin-top: 0%" [hidden]="!start">
+          <ion-row style="text-align: center;margin-left:32%;margin-top: 0%" [hidden]="!start">
 
-            <ion-col col-3 *ngIf="block7" #block7  style="background:#fbfc7a;flex:0 0 18%;">
+            <ion-col col-3 *ngIf="block7" #block7  style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;">
   
               <div  class="blinkgame1" *ngIf="!first7" #seven7>
-                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                  <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
               </div>
               
-              <div (click)="checkresult(7)"  class="stat"  style="height: 80px;width: 80px;margin:0px" *ngIf="first7" #seven>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">7</h1>
+              <div (click)="checkresult(7)"  class="stat"  style="height: 50px;width: 50px;margin:0px" *ngIf="first7" #seven>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">7</h1>
   
               </div>
             </ion-col>
   
-            <ion-col col-3 *ngIf="block8" #block8  style="background:#fbfc7a;flex:0 0 18%;">
+            <ion-col col-3 *ngIf="block8" #block8  style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;">
   
               <div  class="blinkgame1" *ngIf="!eightt" #eight8>
-                  <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                  <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
               </div>
   
-              <div  (click)="checkresult(8)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="eightt" #eight>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">8</h1>
+              <div  (click)="checkresult(8)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="eightt" #eight>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">8</h1>
   
               </div>
   
   
             </ion-col>
 
-            <ion-col col-3 *ngIf="block_9" #block_9 style="background:#fbfc7a;flex:0 0 18%;" >
+            <ion-col col-3 *ngIf="block_9" #block_9 style="border-radius:40px;background:#fbfc7a;flex: 0 0 14%;" >
   
               <div  class="blinkgame1" *ngIf="!nine" #nine8>
-                <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
               </div>
   
-              <div  (click)="checkresult(9)"  class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="nine" #nine9>
-                <h1  style="font-size:60px;padding-top:2%;color: white;">9</h1>
+              <div  (click)="checkresult(9)"  class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="nine" #nine9>
+                <h1  style="font-size:50px;padding-top:2%;color: white;">9</h1>
   
               </div>
   
@@ -204,38 +206,38 @@
           </ion-row>
   
 
-          <ion-row style="text-align: center;margin-left:28%;margin-top: 0%" [hidden]="!start">
-              <ion-col col-3 *ngIf="block11" #block0 style="background:#fbfc7a;flex:0 0 0%;" >
+          <ion-row style="text-align: center;margin-left:32%;margin-top: 0%" [hidden]="!start">
+              <ion-col col-3 *ngIf="block11" #block0 style="border-radius:40px;background:#fbfc7a;flex:0 0 0%;" >
   
                   
       
-                  <div  (click)="checkresult(9)"  class="stat" style="height: 80px;width: 80px;margin:0px"  #eight>
-                    <h1  style="font-size:60px;padding-top:2%;color: white;">*</h1>
+                  <div  (click)="checkresult(9)"  class="stat" style="height: 50px;width: 50px;margin:0px"  #eight>
+                    <h1  style="font-size:50px;padding-top:2%;color: white;">*</h1>
       
                   </div>
       
       
               </ion-col>
   
-              <ion-col col-3 *ngIf="block0"  style="background:#fbfc7a;flex:0 0 0%;" >
+              <ion-col col-3 *ngIf="block0"  style="border-radius:40px;background:#fbfc7a;flex:0 0 0%;" >
     
                 <div  class="blinkgame1" *ngIf="!zero">
-                    <h1 class="glow" style="font-size:60px;padding-top:2%;">{{Strnumber}}</h1>
+                    <h1 class="glow" style="font-size:50px;padding-top:2%;">{{Strnumber}}</h1>
                 </div>
     
-                <div  (click)="check(0)" class="stat" style="height: 80px;width: 80px;margin:0px" *ngIf="zero" #eight>
-                  <h1  style="font-size:60px;padding-top:2%;color: white;">0</h1>
+                <div  (click)="check(0)" class="stat" style="height: 50px;width: 50px;margin:0px" *ngIf="zero" #eight>
+                  <h1  style="font-size:50px;padding-top:2%;color: white;">0</h1>
     
                 </div>
     
     
               </ion-col>
-              <ion-col col-3 *ngIf="block12"  style="background:#fbfc7a;flex:0 0 0%;" >
+              <ion-col col-3 *ngIf="block12"  style="border-radius:40px;background:#fbfc7a;flex:0 0 0%;" >
   
                 
       
-                  <div  (click)="check(0)" class="stat" style="height: 80px;width: 80px;margin:0px" #eight>
-                    <h1  style="font-size:60px;padding-top:2%;color: white;">#</h1>
+                  <div  (click)="check(0)" class="stat" style="height: 50px;width: 50px;margin:0px" #eight>
+                    <h1  style="font-size:50px;padding-top:2%;color: white;">#</h1>
                   </div>
       
               </ion-col>
@@ -282,6 +284,7 @@
             </ion-col>
   
           </ion-row>
+            </div>
   
           </div>
   
@@ -355,6 +358,6 @@
   
   </div >
   
-  </ion-content>
+</ion-content>
   
   

@@ -5,6 +5,8 @@ import {DashboardPage} from "../dashboard/dashboard";
 import {Ng2CsvService} from "ng2csv";
 import { Storage } from '@ionic/storage';
 import {InstructionsPage} from "../instructions/instructions";
+import * as _ from 'lodash';
+
 
 /**
  * Generated class for the MaindashboardPage page.
@@ -41,17 +43,27 @@ export class MaindashboardPage {
   }
 
   play(){
+    this.storage.set("performance_history",'')
+      
 
     this.navCtrl.setRoot(DashboardPage,{"Login ID":this.navParams.get("Login ID")})
   }
 
   downlaod(){
-
-
         this.storage.get("performance_history").then((val) => {
           if(val != null || val != undefined) {
-            this.ng2Csv.download(JSON.parse(val),
+           // alert(val)
+            let finval= this.getuniquedata(JSON.parse(val))
+            
+            finval.map((obj)=>{
+              delete obj.id
+            })
+          //  alert(JSON.stringify(finval))
+            this.ng2Csv.download(finval,
               'performance_history.csv');
+              finval.map((obj)=>{
+                  delete obj.id
+                })
           }
         })
 
@@ -59,6 +71,14 @@ export class MaindashboardPage {
 
   }
 
+  getuniquedata(array){
+
+    array.map((obj)=>{
+      obj.id=obj["time"]+obj["Game Name"]
+    })
+    const uniqueLocations = _.uniqBy(array,"id")
+    return uniqueLocations
+  }
 
 
 }
