@@ -15,7 +15,18 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 body{
- // background: #35a6aa;
+ background: #35a6aa;
 }
 
+ion-app.md {
+    background: #35a6aa;
+}
 
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background:transparent;
+}

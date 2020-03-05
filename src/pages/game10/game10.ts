@@ -122,6 +122,172 @@ export class Game10Page {
   repeatshow:boolean=false;
   game4array=[1,2,3,4]
   game6array=[1,2,3,4,5,6]
+  level1=[
+
+    [1,4,1,3,2],
+    [1,4,3,4,2],
+    [1,4,3,2,3],
+    [1,4,2,3,2],
+
+    
+    [2,1,3,1,4],
+    [2,3,1,3,4],
+    [2,4,2,3,1],
+    [2,1,4,3,4],
+    
+    [3,4,3,2,1],
+    [3,4,1,2,1],
+    [3,2,4,1,4],
+    [3,2,1,2,4],
+    
+    [4,3,4,2,1],
+    [4,3,2,3,1],
+    [4,2,1,2,3],
+    [4,2,1,3,1]
+    
+    ]
+    
+level1Result=[
+[1],[4],[3],[2],
+[1],[3],[2],[4],
+[3],[1],[4],[2],
+[4],[3],[2],[1]
+]    
+    
+    level2=[
+    
+    [1,4,1,3,2,1],
+    [1,4,3,4,2,3],
+    [1,4,3,2,3,1],
+    [1,4,2,3,2,1],
+    
+    
+    [2,1,3,1,4,2],
+    [2,3,1,3,4,1],
+    [2,4,2,3,1,4],
+    [2,1,4,3,4,1],
+    
+    [3,4,3,2,1,3],
+    [3,4,1,2,1,4],
+    [3,2,4,1,4,3],
+    [3,2,1,2,4,3],
+    
+    [4,3,4,2,1,3],
+    [4,3,2,3,1,2],
+    [4,2,1,2,3,1],
+    [4,2,1,3,1,2]
+    ]
+    
+    level2Result=[
+        [1],[4],[3],[2],
+        [1],[3],[2],[4],
+        [3],[1],[4],[2],
+        [4],[3],[2],[1]
+        ]   
+    
+    
+    
+    
+    level3=[
+    
+    [1,4,1,3,2,1,2,3],
+    [1,4,3,4,2,3,1,3],
+    [1,4,3,2,3,1,4,1],
+    [1,4,2,3,2,3,1,2],
+    
+    
+    [2,1,3,1,4,2,4,3],
+    [2,3,1,3,4,1,4,2],
+    [2,4,2,3,1,3,2,1],
+    [2,1,4,3,4,1,3,1],
+    
+    [3,4,3,2,1,3,1,4],
+    [3,4,1,2,1,4,3,4],
+    [3,2,4,1,4,3,2,3],
+    [3,2,1,2,4,3,4,2],
+    
+    [4,3,4,2,1,3,1,2],
+    [4,3,2,3,1,4,3,4],
+    [4,2,1,2,3,1,3,2],
+    [4,2,1,3,1,2,4,2]
+    ]
+    
+   level3Result=[
+        [1,2],[4,3],[3,1],[2,3],
+        [1,4],[3,4],[2,3],[4,1],
+        [3,1],[1,4],[4,3],[2,4],
+        [4,1],[3,4],[2,3],[1,2]
+        ]   
+    
+    
+
+
+
+    level4=
+    [
+    [1,2,1,4,5,6,5,2,3],  
+    [5,4,3,2,3,1,6,1,4],   
+    [4,3,4,1,6,1,5,2,3],
+    [3,4,1,4,5,6,5,4,3],
+    [2,6,5,6,4,3,1,3,2],
+    [6,5,4,5,2,1,2,6,5]
+    ]
+    
+
+   level4Result=[
+        [1,5],
+        [3,1],
+        [4,1],
+        [4,5],
+        [6,3],
+        [5,2]
+        ]   
+    
+    
+   level5=
+    
+    [
+    [1,2,1,4,5,6,5,2,3,1,3],  
+    [5,4,3,2,3,1,6,1,4,3,4],   
+    [4,3,4,1,6,1,5,2,3,2,4],
+    [3,4,3,4,5,6,5,4,3,5,1],
+    [2,6,5,6,4,3,1,3,2,4,2],
+    [6,5,4,5,2,1,2,4,5,4,1]
+    ]
+    
+
+    level5Result=[
+        [1,5,3],
+        [3,1,4],
+        [4,1,2],
+        [3,4,5],
+        [6,3,2],
+        [5,2,4]
+        ] 
+    
+    level6=
+    
+    [
+    [1,2,1,4,5,6,5,2,3,2,6,1],  
+    [5,4,3,2,3,1,6,1,4,3,5,3],   
+    [4,3,4,1,6,1,5,2,5,1,4,2],
+    [3,4,1,4,5,6,5,4,3,5,3,1],
+    [2,6,5,6,4,3,1,3,2,4,2,6],
+    [6,5,4,5,2,1,2,4,5,4,2,1]
+    ]
+    
+
+  level6Result=[
+        [1,5,2],
+        [3,1,3],
+        [4,1,5],
+        [4,5,3],
+        [6,3,2],
+        [5,2,4]
+        ] 
+    
+
+  
   secarray:any=['00','59','58','57','56','55', '54', '53','52','51','50','49','48','47','46','45','44','43','42','41','40','39','38','37','36','35','34','33','32','31','30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01']
   Games:any=
      [{"name":"Game 01","page":Game1Page,"icon":"ios-unlock","color":"primary"},
@@ -260,6 +426,86 @@ export class Game10Page {
   }
 
 
+game_1(){
+
+  this.game4array=[1,2,3,4]
+  this.block9=false;
+  var _index = this.randomIntFromInterval(0,this.level1.length)
+  
+  this.game4array=this.level1[_index]
+  this.result=this.level1Result[_index]
+
+
+
+  for(let k=0;k<this.game4array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game4array[k])
+      
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game4array.length*2500)
+ 
+}  
+
+game_2(){
+
+  this.game4array=[1,2,3,4]
+  this.block9=false;
+  var _index = this.randomIntFromInterval(0,this.level2.length)
+  
+  this.game4array=this.level2[_index]
+  this.result=this.level2Result[_index]
+
+
+
+  for(let k=0;k<this.game4array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game4array[k])
+      
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game4array.length*2500)
+ 
+}
+
+
+
+game_3(){
+
+  this.game4array=[1,2,3,4]
+  this.block9=false;
+  var _index = this.randomIntFromInterval(0,this.level3.length)
+  
+  this.game4array=this.level3[_index]
+  this.result=this.level3Result[_index]
+
+
+
+  for(let k=0;k<this.game4array.length;k++){
+    setTimeout(()=>{
+      this.blinknest(k,this.game4array[k])
+      
+    },k*2500)
+  }
+  setTimeout(()=>{
+    this.check4=true;
+    this.repeatshow=true;
+    this.mssatrt()
+    this.countdown();
+  },this.game4array.length*2500)
+ 
+}
+
 game_(n)
 {
   this.game4array=[1,2,3,4]
@@ -285,18 +531,8 @@ game_(n)
     //alert(this.game4array)
 
   
-  for(let k=0;k<this.game4array.length;k++){
-    setTimeout(()=>{
-      this.blinknest(k,this.game4array[k])
-      
-    },k*2500)
-  }
-  setTimeout(()=>{
-    this.check4=true;
-    this.repeatshow=true;
-    this.mssatrt()
-    this.countdown();
-  },this.game4array.length*2500)
+
+    
 
 
 }
@@ -320,99 +556,7 @@ game_(n)
 
 
 
-game_3()
-{  
-  this.game4array=[1,2,3,4]
-  this.block9=false;
-  this.game4array.sort((a, b)=>{return 0.5 - Math.random()});
-  var _index = this.randomIntFromInterval(0,3)
-  var _number = this.game4array[_index]
-   
-  this.game4array.splice(_index, 0, _number);
-  this.result.unshift(_number)
-  
-  var n_index =  this.randomIntFromInterval(0,3)
-  while(this.game4array[n_index]==_number){
-     n_index = this.randomIntFromInterval(0,3)
-  }
- 
-  var n_number = this.game4array[n_index]
-   
-  this.game4array.splice(n_index, 0, n_number);
-  
-  this.result.unshift(n_number)
-  
-  // alert(this.game4array)
-   
-  // alert(this.find_duplicate_in_array(this.game4array)+"Duplictaes")  
-  
-  var ty=this.find_duplicate_in_array(this.game4array)
-  var fi=ty[0]
-    //  console.log(this.find_duplicate_in_array(this.game4array)[0])
 
-     
-   var f=this.game4array.indexOf(fi)
-   
-      // alert(f+"okkkkk"+s)
-  
-      var fi_num=this.randomIntFromInterval(1,4)
-      while(parseInt(fi)==fi_num || this.game4array[f-1]==fi_num||this.game4array[f+2]==fi_num){
-        fi_num=this.randomIntFromInterval(1,4)
-      }
-      //alert("First"+f)
-      
-      console.log(f)
-      let ind=parseInt(f.toString())+1
-     // alert("alert1"+ind)
-       console.log("alert first"+ind)
-      this.game4array.splice(ind ,0,fi_num)
-     // alert(this.game4array)
-      var tyd=this.find_duplicate_in_array(this.game4array)
-      var si=tyd[0]
-      //console.log()
-      
-      console.log(fi+"second"+si)
-
-      var s=this.game4array.indexOf(si)
-     // alert("Second"+s)
-       
-      var si_num=this.randomIntFromInterval(1,4)
-     
-      while(parseInt(si)==si_num||si_num==fi_num || this.game4array[s-1]==si_num||this.game4array[s+2]==si_num){
-         si_num=this.randomIntFromInterval(1,4)
-       }
-
-
-
-       console.log("Second first"+s)
-      let ind2=parseInt(s.toString())+1
-      console.log(ind2)
-    //  alert("Alert2="+ind2)
-     
-      this.game4array.splice(ind2,0,si_num)
-  //    alert(this.game4array)
-   
-    
-   
-   //this.game4array.splice(s+2,0,this.randomIntFromInterval(1,4))
-  
-
-   
-  
-  
-  for(let k=0;k<this.game4array.length;k++){
-    setTimeout(()=>{
-      this.blinknest(k,this.game4array[k])
-     
-    },k*2500)
-  }
-  setTimeout(()=>{
-    this.check4=true;
-    this.repeatshow=true;
-    this.mssatrt()
-    this.countdown();
-  },this.game4array.length*2700)
-}
 
 
 
@@ -420,32 +564,10 @@ game_4()
 {
   this.game6array=[1,2,3,4,5,6]
   this.block9=false;
-  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
-  var _index = this.randomIntFromInterval(0,5)
-  var _number = this.game6array[_index]
-  this.game6array.splice(_index+2, 0, _number);
-  this.result.unshift(_number)
-    var O_number = this.randomIntFromInterval(1,6)
-    while(this.game6array[this.game6array.length-1]==O_number){
-      O_number = this.randomIntFromInterval(1,6)
-    } 
-    this.game6array.push(O_number);
-    
-    var n_number = this.randomIntFromInterval(1,6)
-
-    while(n_number==_number)
-    {
-      var n_number = this.randomIntFromInterval(1,6)
-    }
-    var i_nd=this.game6array.indexOf(n_number)
-
-    this.game6array.splice(i_nd+2, 0, n_number);
-    this.result.unshift(n_number)
-   // alert(this.result)
-
-
-
-
+  var _index = this.randomIntFromInterval(0,this.level4.length)
+  
+  this.game6array=this.level4[_index]
+  this.result=this.level4Result[_index]
 
 
    //alert(this.game4array)
@@ -471,62 +593,12 @@ game_5()
 {
   this.game6array=[1,2,3,4,5,6]
   this.block9=false;
-  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
-  var _index = this.randomIntFromInterval(0,5)
-  var _number = this.game6array[_index]
-  this.game6array.splice(_index+2, 0, _number);
-   // this.result.unshift(_number)
-   
-    var O_number = this.randomIntFromInterval(1,6)
-    while(_number==O_number){
-      O_number = this.randomIntFromInterval(1,6)
-    } 
-    var i_nd5=this.game6array.indexOf(O_number)
-    this.game6array.splice(i_nd5+2, 0, O_number);
-   
-    var n_number = this.randomIntFromInterval(1,6)
-    while(n_number==_number||n_number==O_number)
-    { 
-      var n_number = this.randomIntFromInterval(1,6)
-    }
-    var i_nd=this.game6array.indexOf(n_number)
-    this.game6array.splice(i_nd+2, 0, n_number);
-    
-    //this.result.unshift(n_number)
-    
-    var O5_number = this.randomIntFromInterval(1,6)
-    
-    while(O5_number==_number||O5_number==O_number||O5_number==n_number){
-      O5_number = this.randomIntFromInterval(1,6)
-    } 
-    var ii_nd=this.game6array.indexOf(O5_number)
-    this.game6array.push(O5_number);
+  var _index = this.randomIntFromInterval(0,this.level5.length)
+  
+  this.game6array=this.level5[_index]
+  this.result=this.level5Result[_index]
 
 
-
-
-
-    var O6_number = this.randomIntFromInterval(1,6)
-    
-    while(O6_number==_number||O6_number==O_number||O6_number==n_number||O6_number==O5_number){
-      O6_number = this.randomIntFromInterval(1,6)
-    } 
-    var ii_nd=this.game6array.indexOf(O5_number)
-    this.game6array.push(O6_number);
-
-    //this.game6array.splice(ii_nd+2, 0, O5_number);
-   
-   // this.result.unshift(this.game6array[this.game6array.length-2])
-    
-   // alert(this.result)
-    //alert(this.game6array)
-
-    for(let j=0; j <this.game6array.length;j++){
-      if(this.game6array[j]==this.game6array[j+2]){
-
-        this.result.push(this.game6array[j])
-      }
-    }
   
   for(let k=0;k<this.game6array.length;k++){
     setTimeout(()=>{
@@ -548,59 +620,13 @@ game_6()
 
   this.game6array=[1,2,3,4,5,6]
   this.block9=false;
-  this.game6array.sort((a, b)=>{return 0.5 - Math.random()});
-  var _index = this.randomIntFromInterval(0,5)
-  var _number = this.game6array[_index]
-  this.game6array.splice(_index+2, 0, _number);
-   // this.result.unshift(_number)
-   
-    var O_number = this.randomIntFromInterval(1,6)
-    while(_number==O_number){
-      O_number = this.randomIntFromInterval(1,6)
-    } 
-    var i_nd5=this.game6array.indexOf(O_number)
-    this.game6array.splice(i_nd5+2, 0, O_number);
-   
-    var n_number = this.randomIntFromInterval(1,6)
-    while(n_number==_number||n_number==O_number)
-    { 
-      var n_number = this.randomIntFromInterval(1,6)
-    }
-    var i_nd=this.game6array.indexOf(n_number)
-    this.game6array.splice(i_nd+2, 0, n_number);
-    
-    //this.result.unshift(n_number)
-    
-    var O5_number = this.randomIntFromInterval(1,6)
-    
-    while(O5_number==_number||O5_number==O_number||O5_number==n_number){
-      O5_number = this.randomIntFromInterval(1,6)
-    } 
-    var ii_nd=this.game6array.indexOf(O5_number)
-    this.game6array.push(O5_number);
-
-
-
-
-
-    var O6_number = this.randomIntFromInterval(1,6)
-    
-    while(O6_number==_number||O6_number==O_number||O6_number==n_number||O6_number==O5_number){
-      O6_number = this.randomIntFromInterval(1,6)
-    } 
-    var ii_nd=this.game6array.indexOf(O5_number)
-    this.game6array.push(O6_number);
-
   
-    var O7_number = this.randomIntFromInterval(1,6)
-    
-    while(O7_number==_number||O7_number==O_number||O7_number==n_number||O7_number==O5_number||O7_number==O6_number){
-      O6_number = this.randomIntFromInterval(1,6)
-    } 
-   /// var ii_nd=this.game6array.indexOf(O5_number)
-    this.game6array.push(O7_number);
-
+  var _index = this.randomIntFromInterval(0,this.level6.length)
   
+  this.game6array=this.level6[_index]
+  this.result=this.level6Result[_index]
+
+
 
 
     for(let k=0;k<this.game6array.length;k++){
@@ -845,7 +871,7 @@ blinknest(n,k){
 
 
 
-  level4(num) {
+  level45(num) {
     this.level=num
     this.number=null;
     this.gamestart1=false;
@@ -888,7 +914,7 @@ blinknest(n,k){
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-          this.game_(1)
+          this.game_1()
           break;
         case 2:
           this.game4array=[1,2,3,4]
@@ -896,7 +922,7 @@ blinknest(n,k){
           this.numarray = []
           this.Strnumber = ""
           this.result = []
-         this.game_(2)
+         this.game_2()
           break;
         case 3:
           this.game4array=[1,2,3,4]
@@ -1088,10 +1114,12 @@ blinknest(n,k){
     this.storage.set("game_history",JSON.stringify(this.d_result))
     var er = this.result[this.index_number]
     var blk = this.checklist.join().toString();
+    
     var ress_result=this.result.reverse().join().toString();
     this.res_result=this.result.join().toString();
     // alert(this.res_result +"===="+blk)
-    if(this.chekArraySimilar(this.result,this.checklist)==true)
+
+    if(blk==this.res_result)
     {
       this.block9=true
       this.testarray.push(1)

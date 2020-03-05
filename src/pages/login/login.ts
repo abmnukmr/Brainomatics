@@ -65,6 +65,7 @@ export class LoginPage {
   }
 
 
+
   hidepass(){
     this.pass_show=true
     this.text="password"

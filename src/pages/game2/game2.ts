@@ -279,6 +279,7 @@ export class Game2Page {
       this.res_checklist = this.checklist.join()
       if (this.result.length == this.checklist.length) {
         setTimeout(()=>{
+          
           this.check()
         },2000)
       }
